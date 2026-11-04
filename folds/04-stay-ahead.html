@@ -1,0 +1,112 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>04 Stay Ahead</title>
+<link rel="stylesheet" href="scita.css">
+<style>
+  .stay { padding: 88px 84px 96px; background: linear-gradient(180deg, #FFFFFF 0%, var(--ice) 100%); }
+  .head { text-align: center; position: relative; }
+  .head .underline-bar { margin: 22px auto 0; }
+  .feature { position: relative; display: flex; align-items: center; gap: 48px; padding: 56px 56px; border-radius: var(--r-xl); margin-top: 48px; overflow: hidden; }
+  .feature.pd { background: linear-gradient(120deg, #E6F4F3 0%, #F2FAFA 60%, #E6F4F3 100%); box-shadow: inset 0 0 0 1px #D6ECEA; }
+  .feature.fs { background: linear-gradient(120deg, #EEF7E6 0%, #F7FBF2 60%, #EAF5E0 100%); box-shadow: inset 0 0 0 1px #DCEFCB; }
+  .feature::after { content: ""; position: absolute; right: -120px; top: -120px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,.9), transparent 70%); }
+  .copy { flex: 1; position: relative; z-index: 1; }
+  .copy .h2 { font-size: 36px; margin-top: 6px; white-space: nowrap; }
+  .copy .body { font-size: 17px; margin-top: 16px; max-width: 520px; }
+  .pills { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
+  .pills .chip { font-size: 15px; padding: 11px 18px; }
+  .pills .chip .ic { font-size: 17px; }
+  .widget { position: relative; width: 470px; flex: 0 0 470px; height: 480px; z-index: 1; }
+
+  /* price drop widget */
+  .notify { position: absolute; left: 0; top: 10px; width: 380px; padding: 20px; }
+  .notify .prod { display: flex; gap: 14px; align-items: center; padding-bottom: 16px; border-bottom: 1px solid #E8EFEF; }
+  .notify .prod .im { width: 96px; height: 70px; border-radius: 12px; background: radial-gradient(circle at 50% 70%, #fff, #EAF2F2); overflow: hidden; position: relative; }
+  .notify .prod .im img { position: absolute; left: 50%; top: 50%; width: 120px; transform: translate(-50%, -50%); }
+  .notify .prod .n { font-size: 15px; font-weight: 600; color: #1F2627; } .notify .prod .p { font-size: 16px; margin-top: 4px; }
+  .notify .t { font-size: 15px; font-weight: 700; color: #1F2627; margin-top: 16px; display: flex; gap: 8px; align-items: center; } .notify .t .ic { color: var(--teal); font-size: 18px; }
+  .field { height: 44px; border-radius: 11px; border: 1.5px solid #D6E3E3; display: flex; align-items: center; padding: 0 14px; font-size: 14px; color: #2B3233; margin-top: 12px; background: #fff; }
+  .field .r { margin-left: auto; color: var(--teal); font-weight: 600; display: flex; gap: 6px; align-items: center; }
+  .seg { display: flex; margin-top: 12px; background: #EEF4F4; border-radius: 11px; padding: 4px; font-size: 13px; font-weight: 600; }
+  .seg span { flex: 1; text-align: center; padding: 8px 0; border-radius: 8px; color: #6B7576; }
+  .seg span.on { background: #fff; color: var(--teal); box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .notify .btn { width: 100%; margin-top: 14px; }
+  .toast { position: absolute; right: -14px; top: 398px; width: 290px; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start; z-index: 3; }
+  .toast .ib { width: 40px; height: 40px; flex: 0 0 40px; border-radius: 12px; background: var(--teal); color: #fff; display: grid; place-items: center; font-family: lucide; font-size: 19px; }
+  .toast .a { font-size: 11.5px; color: #8A9696; } .toast .b { font-size: 13.5px; font-weight: 700; color: #1F2627; margin-top: 2px; line-height: 1.35; }
+  .toast .c { font-size: 13px; margin-top: 4px; } .toast .c .off { color: var(--green-btn); font-weight: 700; margin-left: 6px; }
+
+  /* free shipping widget */
+  .cart { position: absolute; left: 30px; top: 0; width: 400px; padding: 20px; }
+  .cart .hd { display: flex; justify-content: space-between; align-items: center; font-size: 16px; font-weight: 700; color: #1F2627; }
+  .cart .hd span { font-size: 13px; color: #6B7576; font-weight: 500; }
+  .item { display: flex; gap: 12px; align-items: center; margin-top: 14px; }
+  .item img { width: 58px; height: 58px; object-fit: contain; border-radius: 10px; background: #F2F6F6; padding: 4px; }
+  .item .n { flex: 1; font-size: 13.5px; font-weight: 600; color: #1F2627; } .item .n span { display: block; font-size: 12px; color: #8A9696; font-weight: 500; }
+  .item .q { font-size: 14px; font-weight: 700; color: #1F2627; }
+  .prog { margin-top: 16px; padding: 14px; border-radius: 14px; background: #F4FAEE; box-shadow: inset 0 0 0 1px #DCEFCB; }
+  .prog .l { font-size: 13.5px; font-weight: 600; color: #1F2627; display: flex; gap: 8px; align-items: center; } .prog .l b { color: var(--green-btn); }
+  .bar { position: relative; height: 10px; border-radius: 6px; background: #E1ECDA; margin-top: 12px; }
+  .bar i { position: absolute; left: 0; top: 0; bottom: 0; width: 72%; border-radius: 6px; background: linear-gradient(90deg, var(--teal), var(--green)); }
+  .bar .trk { position: absolute; right: -6px; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; border-radius: 50%; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.15); display: grid; place-items: center; font-family: lucide; color: var(--green-btn); font-size: 16px; }
+  .sugg { display: flex; gap: 10px; margin-top: 12px; }
+  .sugg div { flex: 1; display: flex; align-items: center; gap: 8px; padding: 8px; border-radius: 11px; background: #fff; box-shadow: inset 0 0 0 1.5px #DCE8E8; font-size: 12.5px; font-weight: 600; color: #1F2627; }
+  .sugg img { width: 34px; height: 34px; object-fit: contain; }
+  .sugg .plus { margin-left: auto; width: 24px; height: 24px; border-radius: 7px; background: var(--green-btn); color: #fff; display: grid; place-items: center; font-family: lucide; font-size: 14px; }
+  .unlock { position: absolute; right: -14px; bottom: -6px; padding: 14px 18px; display: flex; gap: 12px; align-items: center; z-index: 3; border-radius: 16px; background: #fff; box-shadow: var(--shadow-lg); }
+  .unlock .ib { width: 42px; height: 42px; border-radius: 50%; background: var(--green-btn); color: #fff; display: grid; place-items: center; font-family: lucide; font-size: 20px; }
+  .unlock b { font-size: 15px; color: #1F2627; display: block; } .unlock span { font-size: 12.5px; color: #6B7576; }
+</style></head>
+<body>
+<section class="fold stay dots-bg">
+  <div class="head">
+    <div class="eyebrow">Built to Convert</div>
+    <div class="h2 mt-8">Functionalities That Help You Stay Ahead</div>
+    <div class="underline-bar"></div>
+  </div>
+
+  <div class="feature pd">
+    <div class="copy">
+      <div class="eyebrow">Never Miss a Deal</div>
+      <div class="h2">Price Drop Alerts</div>
+      <p class="body">Turn a potential purchase into a “Buy Now” using email notifications to let your customers know when the product price drops by the percentage or amount shoppers set themselves.</p>
+      <div class="pills"><span class="chip"><span class="ic icon-percent"></span>Drop by Percentage</span><span class="chip"><span class="ic icon-dollar-sign"></span>Drop by Amount</span></div>
+    </div>
+    <div class="widget">
+      <div class="notify card-lg">
+        <div class="prod"><div class="im"><img src="../assets/renders/sofa_34.png" alt=""></div><div><div class="n">Grey Linen 3-Seater Sofa</div><div class="p price">$749.00</div></div></div>
+        <div class="t"><span class="ic icon-bell-ring"></span>Notify Me When the Price Drops</div>
+        <div class="seg"><span class="on">By Percentage</span><span>By Amount</span></div>
+        <div class="field">Drops by<span class="r">15% <span class="ic icon-chevron-down"></span></span></div>
+        <div class="field">emma.clark@mail.com</div>
+        <div class="btn"><span class="ic icon-bell-ring"></span>Notify Me</div>
+      </div>
+      <div class="toast card-lg">
+        <span class="ib icon-mail"></span>
+        <div><div class="a">Email · just now</div><div class="b">Good news! The price just dropped</div><div class="c"><span class="price">$636.65</span><span class="strike" style="margin-left:6px">$749.00</span><span class="off">-15%</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature fs">
+    <div class="copy">
+      <div class="eyebrow" style="color:var(--green-btn)">Unlock</div>
+      <div class="h2">Free Shipping Progress Bar</div>
+      <p class="body">Set a free-shipping limit in your delivery method. Shoppers see how much more to add, with product suggestions to get there, and a confirmation once free shipping unlocks.</p>
+      <div class="pills"><span class="chip"><span class="ic icon-truck"></span>Set in Delivery Method</span><span class="chip"><span class="ic icon-lightbulb"></span>Smart Suggestions</span></div>
+    </div>
+    <div class="widget">
+      <div class="cart card-lg">
+        <div class="hd">Your Cart<span>2 items</span></div>
+        <div class="item"><img src="../assets/products/tajin.png" alt=""><div class="n">Chile Lime Seasoning<span>Qty 2</span></div><div class="q">$18.00</div></div>
+        <div class="item"><img src="../assets/products/vinegar.png" alt=""><div class="n">Marukan Rice Vinegar<span>Qty 1</span></div><div class="q">$18.00</div></div>
+        <div class="prog">
+          <div class="l"><span class="ic icon-truck" style="color:var(--green-btn)"></span>Add <b>$14.00</b> More for Free Shipping</div>
+          <div class="bar"><i></i><span class="trk icon-truck"></span></div>
+          <div class="sugg"><div><img src="../assets/products/pringles.png" alt="">Chips +$6<span class="plus icon-plus"></span></div><div><img src="../assets/products/cola.png" alt="">Cola +$9<span class="plus icon-plus"></span></div></div>
+        </div>
+      </div>
+      <div class="unlock"><span class="ib icon-party-popper"></span><div><b>You've Unlocked Free Shipping!</b><span>Your order ships free today.</span></div></div>
+    </div>
+  </div>
+</section>
+</body></html>

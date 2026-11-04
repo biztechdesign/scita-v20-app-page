@@ -1,0 +1,11 @@
+# working / regenerable files
+export/before/
+export/png/
+export/gif_frames/
+export/zoom*.png
+blender/test/
+assets/crops/
+assets/source/
+assets/shots/*_full.png
+assets/shots/*_long.png
+__pycache__/

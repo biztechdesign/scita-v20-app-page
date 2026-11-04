@@ -1,0 +1,65 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>05 PWA &amp; Speed</title>
+<link rel="stylesheet" href="scita.css">
+<style>
+  .pwa { padding: 88px 84px 96px; background: radial-gradient(700px 520px at 18% 75%, rgba(1,126,132,.14), transparent 65%), linear-gradient(160deg, #F2FAFA 0%, #E6F4F3 100%); }
+  .top { max-width: 760px; position: relative; }
+  .top .lead { margin-top: 14px; }
+  .body { display: flex; gap: 56px; margin-top: 54px; align-items: center; position: relative; }
+  .phonewrap { position: relative; width: 330px; flex: 0 0 330px; margin-left: 20px; }
+  .phone .screen { height: auto; }
+  .phone .screen img { width: 100%; height: auto; padding-top: 30px; background: #fff; }
+  .nav { position: absolute; left: 22px; right: 22px; bottom: 22px; height: 66px; border-radius: 22px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.18);
+    display: flex; justify-content: space-around; align-items: center; z-index: 4; font-family: lucide; font-size: 22px; color: #7B8789; }
+  .nav .home { width: 50px; height: 50px; border-radius: 50%; background: var(--teal); color: #fff; display: grid; place-items: center; box-shadow: 0 6px 14px rgba(1,126,132,.4); }
+  .right { flex: 1; }
+  .feat { display: flex; gap: 18px; padding: 24px; }
+  .feat + .feat { margin-top: 18px; }
+  .feat h4 { font-size: 20px; font-weight: 600; color: #1F2627; } .feat p { font-size: 15.5px; line-height: 1.6; color: var(--ink-soft); margin-top: 6px; }
+  .lower { display: flex; gap: 22px; margin-top: 28px; align-items: stretch; }
+  .appicon { width: 190px; flex: 0 0 190px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 22px; }
+  .appicon .s { width: 92px; height: 92px; border-radius: 24px; background: linear-gradient(145deg, #12898F, var(--hero)); color: #fff; font-size: 54px; font-weight: 800; display: grid; place-items: center; box-shadow: 0 10px 22px rgba(1,126,132,.4); }
+  .appicon b { font-size: 16px; letter-spacing: 3px; color: #1F2627; }
+  .appicon span { font-size: 12px; color: #6B7576; text-align: center; line-height: 1.4; }
+  .speed { flex: 1; padding: 22px 26px; }
+  .speed .t { font-size: 16px; font-weight: 700; color: #1F2627; display: flex; align-items: center; gap: 8px; } .speed .t .ic { color: var(--teal); font-size: 19px; }
+  .gauges { display: flex; justify-content: space-around; margin-top: 14px; }
+  .g { text-align: center; }
+  .g .ring { position: relative; width: 132px; height: 132px; }
+  .g svg { width: 132px; height: 132px; transform: rotate(-90deg); }
+  .g .v { position: absolute; inset: 0; display: grid; place-items: center; font-size: 34px; font-weight: 800; color: var(--green-btn); }
+  .g .l { font-size: 14px; font-weight: 600; color: #2B3233; margin-top: 8px; display: flex; gap: 6px; align-items: center; justify-content: center; } .g .l .ic { color: var(--teal); }
+  .arrow { position: absolute; left: 300px; top: 330px; z-index: 5; }
+</style></head>
+<body>
+<section class="fold pwa dots-bg">
+  <div class="top">
+    <div class="eyebrow">Intuitive</div>
+    <div class="h2 mt-8">Progressive Web App Experience</div>
+    <p class="lead">Scita's built-in PWA support gives users a lightning-fast, frictionless, and intuitive experience on their mobile devices and computers.</p>
+  </div>
+  <div class="body">
+    <div class="phonewrap">
+      <div class="phone"><div class="notch"></div><div class="screen"><img src="../assets/shots/electronics_mobile.png" alt="">
+      </div></div>
+    </div>
+    <div class="right">
+      <div class="feat card"><span class="ibadge solid"><span class="ic icon-settings-2"></span></span><div><h4>Configurable PWA Options</h4><p>Define app icons, names, and colors. All from Odoo. Zero coding.</p></div></div>
+      <div class="feat card"><span class="ibadge solid"><span class="ic icon-smartphone"></span></span><div><h4>Mobile App Shortcuts</h4><p>Users can access key pages (such as Orders and Wishlist) directly from their mobile home screen, just like a native app.</p></div></div>
+      <div class="lower">
+        <div class="appicon card"><div class="s">S</div><b>SCITA</b><span>Installs to the home screen like a native app</span></div>
+        <div class="speed card">
+          <div class="t"><span class="ic icon-gauge"></span>Google PageSpeed Score</div>
+          <div class="gauges">
+            <div class="g"><div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="none" stroke="#E4EFEA" stroke-width="11"/><circle cx="60" cy="60" r="50" fill="none" stroke="url(#gr)" stroke-width="11" stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="28"/>
+              <defs><linearGradient id="gr" x1="0" x2="1"><stop offset="0" stop-color="#81C54C"/><stop offset="1" stop-color="#5FA832"/></linearGradient></defs></svg><div class="v">90+</div></div>
+              <div class="l"><span class="ic icon-monitor"></span>Desktop Speed</div></div>
+            <div class="g"><div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="none" stroke="#E4EFEA" stroke-width="11"/><circle cx="60" cy="60" r="50" fill="none" stroke="url(#gr)" stroke-width="11" stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="60"/></svg><div class="v">80+</div></div>
+              <div class="l"><span class="ic icon-smartphone"></span>Mobile App Speed</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body></html>

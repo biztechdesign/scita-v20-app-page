@@ -1,0 +1,58 @@
+[
+ [
+  "Which Odoo version is this theme compatible with?",
+  "This theme is compatible with Odoo V17,V18 and V19."
+ ],
+ [
+  "On how many Odoo instances can this theme copy be used?",
+  "It can be used on only one Odoo instance. To use this theme in multiple instances, you need to purchase the theme multiple times."
+ ],
+ [
+  "What are the support and update policies?",
+  "Please refer to our support policy <span style=\"color:#00008B; font-weight:bold\"> https://www.appjetty.com/support-policy.htm</span>"
+ ],
+ [
+  "Do you have guidelines for installing this theme?",
+  "Yes, we have a user guide which includes installation and configuration steps. Please contact our support team at <a href=\"mailto:support@appjetty.com\">support@appjetty.com</a>"
+ ],
+ [
+  "Do you install the theme for us?",
+  "Yes, we do install the theme for you. It's quite easy. You just need to purchase the theme along with our installation services &amp; we would be happy to assist you."
+ ],
+ [
+  "Can the theme support languages other than English?",
+  "Yes, it is a multilingual theme with RTL support, and it support the language(s) of your choice."
+ ],
+ [
+  "Can you help us customize the theme?",
+  "Yes, we offer professional Odoo website and eCommerce customization services. Whether it’s a minor tweak or a full-scale branding overhaul, our development team can make Scita your own. You can share your requirements at <a href=\"mailto:support@appjetty.com\">support@appjetty.com</a> and we'll get back to you as soon as possible."
+ ],
+ [
+  "Can Scita be tailored to my industry or use case?",
+  "Absolutely. Scita’s modular design and snippet builder makes it easy to adapt across industries—from ecommerce to services to manufacturing."
+ ],
+ [
+  "Will I be able to add my own CSS to the theme?",
+  "Yes, you can create new modules and extend our theme CSS to add all the required changes in that module. Please do not alter the theme CSS directly as it may break the theme design."
+ ],
+ [
+  "Is Scita compatible with Odoo Enterprise and Community?",
+  "Yes. Scita works seamlessly with both Odoo Enterprise and Community editions."
+ ],
+ [
+  "Is this theme compatible with Odoo's Multi Website Feature?",
+  "Yes, our theme scita is compatible with Odoo's Multi Website Feature. You can add our theme scita for multiple websites if they all are on Odoo v12 but all the websites should be hosted on a single Odoo instance. To apply our theme for multiple websites, you need to have a technical understanding of Odoo."
+ ],
+ [
+  "Can I resell your theme?",
+  "No, you can not. Your purchase of the theme only allows your commercial use which means you do not have the rights to resell our theme."
+ ],
+ [
+  "What makes Scita different from other Odoo themes?",
+  "Scita is the first theme with Bento UI, featuring less than 3,000 lines of lean code and including 84 snippets, which provide speed, flexibility, and an unmatched user experience."
+ ],
+ [
+  "What kind of support do you offer?",
+  "We offer reliable support via email and our ticketing system. You’ll get prompt responses from product experts, not bots."
+ ]
+]

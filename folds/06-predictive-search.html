@@ -1,0 +1,65 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>06 Predictive Search</title>
+<link rel="stylesheet" href="scita.css">
+<style>
+  .ps { padding: 88px 84px 96px; background: linear-gradient(180deg, #FFFFFF 0%, #F2FAFA 55%, #E6F4F3 100%); }
+  .divider { display: flex; align-items: center; gap: 28px; }
+  .divider i { flex: 1; height: 1.5px; background: linear-gradient(90deg, transparent, #A9D3D2); display: block; }
+  .divider i:last-child { background: linear-gradient(90deg, #A9D3D2, transparent); }
+  .divider span { font-size: 24px; font-weight: 600; color: #5E7A7B; text-align: center; line-height: 1.35; }
+  .head { text-align: center; margin-top: 76px; position: relative; }
+  .head .lead { max-width: 760px; margin: 14px auto 0; }
+  .map { position: relative; display: grid; grid-template-columns: 228px 1fr 228px; gap: 26px; align-items: center; margin-top: 58px; }
+  .side { display: flex; flex-direction: column; gap: 22px; }
+  .node { display: flex; align-items: center; gap: 14px; padding: 16px 18px; position: relative; z-index: 2; }
+  .node b { font-size: 15px; font-weight: 600; color: #1F2627; line-height: 1.3; }
+  .side.r .node { flex-direction: row; }
+  .screen { position: relative; z-index: 2; }
+  .screen .browser img { width: 100%; }
+  .chipq { position: absolute; left: 50%; top: -22px; transform: translateX(-50%); z-index: 3; white-space: nowrap; }
+  svg.links { position: absolute; inset: 0; z-index: 1; overflow: visible; }
+</style></head>
+<body>
+<section class="fold ps">
+  <div class="divider"><i></i><span>Built on the Features That<br>Made Scita Popular</span><i></i></div>
+
+  <div class="head">
+    <div class="eyebrow">One-of-a-Kind</div>
+    <div class="h2 mt-8">Predictive, Smarter, Faster Search</div>
+    <p class="lead">Fewer clicks. Faster checkouts. Higher sales—unlock measurable ROI with predictive product search.</p>
+  </div>
+
+  <div class="map" id="map">
+    <svg class="links" id="links"></svg>
+    <div class="side l">
+      <div class="node card" data-k="l"><span class="ibadge sm"><span class="ic icon-search"></span></span><b>Advanced Search</b></div>
+      <div class="node card" data-k="l"><span class="ibadge sm"><span class="ic icon-wand-sparkles"></span></span><b>Smart Autocomplete</b></div>
+      <div class="node card" data-k="l"><span class="ibadge sm"><span class="ic icon-layout-grid"></span></span><b>Product &amp; Category Search</b></div>
+    </div>
+    <div class="screen" id="screen">
+      <div class="chip dark chipq"><span class="ic icon-search"></span>“chai” → Chairs, Chaise &amp; more</div>
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><div class="url"><span class="ic icon-lock"></span>yourstore.com/search</div></div>
+        <img src="../assets/shots/furniture_search.png" alt=""></div>
+    </div>
+    <div class="side r">
+      <div class="node card" data-k="r"><span class="ibadge sm"><span class="ic icon-network"></span></span><b>Category Synonyms</b></div>
+      <div class="node card" data-k="r"><span class="ibadge sm"><span class="ic icon-lightbulb"></span></span><b>Nearest Suggestions</b></div>
+      <div class="node card" data-k="r"><span class="ibadge sm"><span class="ic icon-file-search"></span></span><b>Search Keywords Report</b></div>
+    </div>
+  </div>
+</section>
+<script>
+  // dashed connectors from each feature node to the screenshot edge
+  const m = document.getElementById("map").getBoundingClientRect(), s = document.getElementById("screen").getBoundingClientRect();
+  let html = "";
+  document.querySelectorAll(".node").forEach(n => {
+    const r = n.getBoundingClientRect(), y = r.top + r.height / 2 - m.top;
+    const x1 = n.dataset.k === "l" ? r.right - m.left : r.left - m.left;
+    const x2 = n.dataset.k === "l" ? s.left - m.left + 8 : s.right - m.left - 8;
+    const ty = s.top - m.top + s.height * (0.3 + 0.2 * [...n.parentNode.children].indexOf(n));
+    html += `<path d="M${x1},${y} C${(x1 + x2) / 2},${y} ${(x1 + x2) / 2},${ty} ${x2},${ty}" fill="none" stroke="#7FBFBE" stroke-width="2" stroke-dasharray="5 6"/>
+             <circle cx="${x2}" cy="${ty}" r="5" fill="#017E84"/>`;
+  });
+  document.getElementById("links").innerHTML = html;
+</script>
+</body></html>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>02 Image Hotspot (GIF)</title>
+<link rel="stylesheet" href="scita.css">
+<style>
+  .hot { padding: 88px 0 96px; background: radial-gradient(900px 420px at 50% 0%, #D5EEEC, transparent 70%), linear-gradient(180deg, var(--ice), var(--mint)); }
+  .head { text-align: center; padding: 0 160px; position: relative; }
+  .head .lead { margin-top: 16px; }
+  .stage { position: relative; width: 1100px; margin: 50px auto 0; }
+  .browser .room { position: relative; height: 672px; overflow: hidden; }
+  .browser .room img.bgimg { width: 100%; }
+  .storenav span.active { color: var(--teal); font-weight: 600; position: relative; }
+  .storenav span.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -17px; height: 2px; background: var(--teal); }
+  .shade { position: absolute; left: 0; right: 0; top: 92px; bottom: 0; background: rgba(8, 36, 38, .55); opacity: 0; }
+
+  /* product dialog */
+  .dialog { position: absolute; left: 110px; top: 150px; width: 880px; height: 500px; border-radius: 22px; background: #fff; box-shadow: var(--shadow-lg);
+    display: flex; overflow: hidden; opacity: 0; transform: translateY(16px) scale(.98); }
+  .viewer { position: relative; width: 470px; background: radial-gradient(circle at 50% 62%, #FFFFFF 0%, #EDF4F4 60%, #DDEAEA 100%); }
+  .viewer .sofa { position: absolute; left: 50%; top: 52%; width: 470px; transform: translate(-50%, -50%); opacity: 0; }
+  .viewer .sofa.on { opacity: 1; }
+  .viewer .orbit { position: absolute; left: 50%; top: 77%; width: 360px; height: 70px; transform: translate(-50%, -50%); border: 2px dashed rgba(1,126,132,.4); border-radius: 50%; }
+  .viewer .chip { position: absolute; left: 18px; top: 18px; }
+  .viewer .b3d { position: absolute; right: 18px; top: 18px; background: #10292B; color: #fff; font-size: 13px; font-weight: 700; padding: 6px 11px; border-radius: 9px; letter-spacing: .5px; }
+  .viewer .angles { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); display: flex; gap: 8px; }
+  .viewer .angles i { width: 8px; height: 8px; border-radius: 50%; background: #BCD3D3; display: block; }
+  .viewer .angles i.on { background: var(--teal); width: 22px; border-radius: 6px; }
+  .info { flex: 1; padding: 34px 34px 28px; display: flex; flex-direction: column; }
+  .info .cat { font-size: 12px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--teal); }
+  .info h3 { font-size: 25px; font-weight: 700; color: #1F2627; margin-top: 6px; line-height: 1.2; }
+  .info .rate { font-size: 13px; color: #6B7576; margin-top: 8px; } .info .rate b { color: #F2B33D; letter-spacing: 1px; font-weight: 400; }
+  .info .pr { font-size: 26px; margin-top: 12px; } .info .pr .strike { font-size: 16px; margin-left: 8px; }
+  .info .sw { display: flex; gap: 10px; margin-top: 14px; align-items: center; font-size: 13px; color: #6B7576; }
+  .info .sw i { width: 24px; height: 24px; border-radius: 50%; display: block; box-shadow: 0 0 0 2px #fff, 0 0 0 3px #D5DEDE; }
+  .info .sw i.on { box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--teal); }
+  .info .acts { display: flex; gap: 10px; margin-top: 18px; } .info .acts .btn { flex: 1; }
+  .arbox { margin-top: auto; display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 14px; background: var(--ice); box-shadow: inset 0 0 0 1.5px var(--line); }
+  .arbox img { width: 84px; height: 84px; border-radius: 8px; }
+  .arbox .t { font-size: 15px; font-weight: 700; color: #1F2627; display: flex; gap: 6px; align-items: center; } .arbox .t .ic { color: var(--teal); }
+  .arbox .s { font-size: 12.5px; color: #6B7576; margin-top: 3px; line-height: 1.45; }
+  .arbox.hit { box-shadow: inset 0 0 0 2px var(--teal), 0 0 0 6px rgba(1,126,132,.15); }
+
+  /* AR phone */
+  .arphone { position: absolute; right: 70px; top: 46px; width: 330px; opacity: 0; transform: translateY(40px); z-index: 8; }
+  .arphone .screen { height: 610px; }
+  .arphone .screen img { width: 100%; height: 100%; object-fit: cover; }
+  .arui { position: absolute; inset: 0; z-index: 2; }
+  .arui .top { position: absolute; top: 52px; left: 0; right: 0; display: flex; justify-content: center; }
+  .arui .reticle { position: absolute; left: 46%; top: 64.5%; width: 290px; height: 62px; transform: translate(-50%, -50%); border: 2.5px solid rgba(255,255,255,.95); border-radius: 50%;
+     box-shadow: 0 0 0 6px rgba(129,197,76,.25); }
+  .arui .dim { position: absolute; left: 50%; top: 31%; transform: translateX(-50%); background: #fff; color: #1F2627; font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,.2); }
+  .arui .dimline { position: absolute; left: 14%; right: 14%; top: 34.5%; height: 2px; background: rgba(255,255,255,.9); }
+  .arui .dimline::before, .arui .dimline::after { content: ""; position: absolute; top: -6px; width: 2px; height: 14px; background: #fff; }
+  .arui .dimline::before { left: 0; } .arui .dimline::after { right: 0; }
+  .arui .bottom { position: absolute; left: 16px; right: 16px; bottom: 18px; padding: 12px; border-radius: 18px; background: rgba(255,255,255,.95); display: flex; align-items: center; gap: 10px; }
+  .arui .bottom .n { flex: 1; font-size: 12.5px; font-weight: 600; color: #1F2627; line-height: 1.3; } .arui .bottom .n span { display: block; color: var(--teal); font-weight: 700; }
+
+  /* cursor */
+  .cursor { position: absolute; left: 0; top: 0; z-index: 20; width: 34px; height: 34px; pointer-events: none; filter: drop-shadow(0 3px 4px rgba(0,0,0,.35)); }
+  .ripple { position: absolute; z-index: 19; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; border: 3px solid var(--green); background: rgba(129,197,76,.25); opacity: 0; }
+  .steps { display: flex; justify-content: center; gap: 10px; margin-top: 30px; }
+  .steps i { width: 10px; height: 10px; border-radius: 6px; background: #BFD9D8; display: block; }
+  .steps i.on { width: 34px; background: var(--teal); }
+</style></head>
+<body>
+<section class="fold hot dots-bg">
+  <div class="head">
+    <div class="eyebrow">Click, Envision, Purchase</div>
+    <div class="h2 mt-8">Image Hotspot with 3D &amp; AR View</div>
+    <p class="lead">Tag products right on your images. Shoppers click a hotspot to see product details, explore it in 3D, and use AR to see how it fits in their own space.</p>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="browser">
+      <div class="bar"><i></i><i></i><i></i><div class="url"><span class="ic icon-lock"></span>yourstore.com/living-room</div></div>
+      <div class="storenav"><b>SCITA</b><span class="active">Living Room</span><span>Bedroom</span><span>Dining</span><span>Decor</span><span>Sale</span><span class="sp"></span>
+        <span class="ic icon-search"></span><span class="ic icon-heart"></span><span class="ic icon-shopping-cart"></span></div>
+      <div class="room">
+        <img class="bgimg" src="../assets/renders/room_wide.png" alt="">
+        <span class="hs ring" id="hs-sofa" style="left:50.6%;top:56%"></span>
+        <span class="hs" style="left:85.3%;top:17%"></span>
+        <span class="hs" style="left:19.4%;top:37%"></span>
+        <span class="hs" style="left:52.9%;top:18%"></span>
+      </div>
+    </div>
+    <div class="shade" id="shade"></div>
+
+    <div class="dialog" id="dialog">
+      <div class="viewer" id="viewer">
+        <div class="orbit"></div>
+        <img class="sofa" data-a="0" src="../assets/renders/sofa_34.png" alt="">
+        <img class="sofa" data-a="1" src="../assets/renders/sofa_front.png" alt="">
+        <img class="sofa" data-a="2" src="../assets/renders/sofa_side.png" alt="">
+        <div class="chip dark"><span class="ic icon-rotate-3d"></span>Drag to Rotate · 360°</div>
+        <span class="b3d">3D</span>
+        <div class="angles"><i data-a="0"></i><i data-a="1"></i><i data-a="2"></i></div>
+      </div>
+      <div class="info">
+        <div class="cat">Living Room · Sofas</div>
+        <h3>Grey Linen 3-Seater Sofa</h3>
+        <div class="rate"><b>★★★★★</b> &nbsp;4.9 (128 reviews)</div>
+        <div class="pr price">$749.00<span class="strike">$899.00</span></div>
+        <div class="sw">Colour <i class="on" style="background:#A9A7A1"></i><i style="background:#2E7F80"></i><i style="background:#D7C3A3"></i></div>
+        <div class="acts"><div class="btn"><span class="ic icon-shopping-cart"></span>Add to Cart</div><div class="btn ghost"><span class="ic icon-heart"></span>Wishlist</div></div>
+        <div class="arbox" id="arbox">
+          <img src="../assets/qr/furniture.svg" alt="" style="padding:6px;background:#fff">
+          <div><div class="t">View in Your Room</div><div class="s">Scan with your phone to place it in your space with AR.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arphone phone" id="arphone">
+      <div class="notch"></div>
+      <div class="screen">
+        <img src="../assets/renders/room_portrait.png" alt="">
+        <div class="arui">
+          <div class="top"><span class="chip dark"><span class="ic icon-view"></span>AR View · True to Scale</span></div>
+          <div class="dim">224 cm</div><div class="dimline"></div>
+          <div class="reticle"></div>
+          <div class="bottom"><div class="n">Grey Linen 3-Seater Sofa<span>$749.00</span></div><div class="btn sm"><span class="ic icon-shopping-cart"></span>Add</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ripple" id="ripple"></div>
+    <svg class="cursor" id="cursor" viewBox="0 0 24 24"><path d="M4 2.5 L4 19.5 L8.6 15.4 L11.6 22 L14.6 20.7 L11.7 14.2 L18 14.2 Z" fill="#fff" stroke="#10292B" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  </div>
+  <div class="steps" id="steps"><i></i><i></i><i></i><i></i></div>
+</section>
+<script>
+/* Frame state comes from the URL query, e.g. ?s={"from":"hs-sofa","to":"arbox","t":0.5,"dialog":1,"angle":0,"ar":0,"click":0,"step":1}
+   Anchors: "rest" | element ids. Used by tools/make_gif.py; with no hash the page shows the idle storefront. */
+const st = Object.assign({from: "rest", to: "rest", t: 0, dialog: 0, angle: 0, ar: 0, click: 0, step: 0},
+  new URLSearchParams(location.search).get("s") ? JSON.parse(new URLSearchParams(location.search).get("s")) : {});
+const stage = document.getElementById("stage");
+function pt(name) {
+  if (name === "rest") return {x: 860, y: 690};
+  if (name === "viewer-l") { const r = rel("viewer"); return {x: r.x + r.w * .35, y: r.y + r.h * .55}; }
+  if (name === "viewer-r") { const r = rel("viewer"); return {x: r.x + r.w * .68, y: r.y + r.h * .55}; }
+  const r = rel(name); return {x: r.x + r.w * (name === "arbox" ? .14 : .5), y: r.y + r.h * .55};
+}
+function rel(id) { const s = stage.getBoundingClientRect(), r = document.getElementById(id).getBoundingClientRect();
+  return {x: r.left - s.left, y: r.top - s.top, w: r.width, h: r.height}; }
+const d = document.getElementById("dialog");
+d.style.opacity = st.dialog; d.style.transform = `translateY(${16 * (1 - st.dialog)}px) scale(${.98 + .02 * st.dialog})`;
+document.getElementById("shade").style.opacity = Math.max(st.dialog, st.ar);
+document.querySelectorAll(".sofa").forEach(e => e.classList.toggle("on", +e.dataset.a === st.angle));
+document.querySelectorAll(".angles i").forEach(e => e.classList.toggle("on", +e.dataset.a === st.angle));
+const ph = document.getElementById("arphone"); ph.style.opacity = st.ar; ph.style.transform = `translateY(${40 * (1 - st.ar)}px)`;
+if (st.ar > 0) document.getElementById("arbox").classList.add("hit");
+if (st.dialog === 0) document.getElementById("hs-sofa").classList.toggle("active", st.click > 0 || st.hot === 1);
+const a = pt(st.from), b = pt(st.to), e = st.t < .5 ? 2 * st.t * st.t : 1 - Math.pow(-2 * st.t + 2, 2) / 2;
+const x = a.x + (b.x - a.x) * e, y = a.y + (b.y - a.y) * e;
+const c = document.getElementById("cursor"); c.style.left = (x - 6) + "px"; c.style.top = (y - 2) + "px";
+c.style.display = st.ar >= 1 ? "none" : "block";
+const rp = document.getElementById("ripple"); rp.style.left = x + "px"; rp.style.top = y + "px"; rp.style.opacity = st.click;
+rp.style.transform = `scale(${.6 + .6 * st.click})`;
+document.querySelectorAll("#steps i").forEach((e, i) => e.classList.toggle("on", i === st.step));
+</script>
+</body></html>

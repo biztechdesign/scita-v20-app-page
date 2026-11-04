@@ -1,0 +1,86 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>08 Industry</title>
+<link rel="stylesheet" href="scita.css">
+<style>
+  .ind { padding: 88px 84px 96px; background: radial-gradient(900px 500px at 0% 0%, rgba(1,126,132,.12), transparent 60%), linear-gradient(180deg, #F2FAFA 0%, #FFFFFF 45%, #E6F4F3 100%); }
+  .h2 .teal { color: var(--teal); }
+  .intro { max-width: 820px; margin-top: 14px; position: relative; }
+  .lbl { font-size: 17px; font-weight: 600; color: #1F2627; margin-top: 40px; }
+  .inds { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 18px; }
+  .inds .card { padding: 22px; display: flex; flex-direction: column; gap: 16px; }
+  .inds b { font-size: 16px; font-weight: 600; color: #1F2627; line-height: 1.35; }
+  .more { text-align: right; font-size: 15px; font-weight: 600; color: var(--teal); margin-top: 12px; }
+  .stat { margin-top: 56px; display: flex; gap: 36px; align-items: center; }
+  .stat .big { font-size: 128px; font-weight: 800; line-height: .9; letter-spacing: -4px; background: linear-gradient(180deg, var(--teal), #0B4548); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .stat .t { font-size: 30px; font-weight: 600; color: #1F2627; line-height: 1.3; letter-spacing: -.3px; }
+  .stat .s { font-size: 17px; color: var(--ink-soft); margin-top: 10px; line-height: 1.6; }
+  .bento { position: relative; height: 834px; margin-top: 50px; }
+  .tile { position: absolute; background: #fff; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); border: var(--border); }
+  .tile.bar-t::before, .tile.bar-g::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px; z-index: 2; }
+  .tile.bar-t::before { background: var(--teal); } .tile.bar-g::before { background: var(--green); }
+  .tile img { width: 100%; height: 100%; object-fit: cover; }
+  .tile.fit img { object-fit: contain; padding: 18px 14px 10px; }
+  .ai { background: #0B4548; color: #fff; }
+  .ai img.bg { position: absolute; left: -43px; top: 134px; width: 426px; height: 700px; max-width: none; object-fit: cover; }
+  .ai .shade { position: absolute; inset: 0; background: linear-gradient(180deg, #0B4548 0%, #0B4548 17%, rgba(11,69,72,.92) 26%, rgba(11,69,72,.55) 36%, rgba(11,69,72,.12) 46%, rgba(11,69,72,0) 52%, rgba(11,69,72,0) 84%, rgba(11,69,72,.35) 100%); }
+  .ai .txt { position: absolute; left: 30px; right: 26px; top: 34px; z-index: 2; }
+  .ai .e { font-size: 24px; font-weight: 600; color: var(--green); }
+  .ai .h { font-size: 30px; font-weight: 700; line-height: 1.15; margin-top: 4px; }
+  .ai .p { font-size: 15px; color: #BFE0DE; margin-top: 16px; display: flex; align-items: center; gap: 10px; } .ai .p::before { content: ""; width: 34px; height: 2px; background: var(--green); }
+  .ai .big { font-size: 64px; font-weight: 800; line-height: 1; letter-spacing: -1.5px; margin-top: 12px; white-space: nowrap; }
+  .ai .big span { color: var(--green); }
+  .ai .frame { position: absolute; z-index: 2; }
+  .ai .frame i { position: absolute; width: 22px; height: 22px; border: 3px solid #fff; filter: drop-shadow(0 1px 3px rgba(0,0,0,.35)); }
+  .ai .frame i:nth-child(1) { left: 0; top: 0; border-right: 0; border-bottom: 0; border-radius: 6px 0 0 0; }
+  .ai .frame i:nth-child(2) { right: 0; top: 0; border-left: 0; border-bottom: 0; border-radius: 0 6px 0 0; }
+  .ai .frame i:nth-child(3) { left: 0; bottom: 0; border-right: 0; border-top: 0; border-radius: 0 0 0 6px; }
+  .ai .frame i:nth-child(4) { right: 0; bottom: 0; border-left: 0; border-top: 0; border-radius: 0 0 6px 0; }
+  .ai .dimline { position: absolute; z-index: 2; height: 2px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.3); }
+  .ai .dimline::before, .ai .dimline::after { content: ""; position: absolute; top: -5px; width: 2px; height: 12px; background: #fff; }
+  .ai .dimline::before { left: 0; } .ai .dimline::after { right: 0; }
+  .ai .dim { position: absolute; z-index: 3; transform: translate(-50%, -50%); background: #fff; color: #1F2627; font-size: 13px; font-weight: 700; padding: 4px 10px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,.2); }
+  .ai .arch { position: absolute; z-index: 3; left: 50%; bottom: 34px; transform: translateX(-50%); white-space: nowrap; }
+  .quote { position: absolute; left: -10px; bottom: -40px; font-size: 140px; font-weight: 800; color: rgba(1,126,132,.10); line-height: 1; }
+</style></head>
+<body>
+<section class="fold ind dots-bg">
+  <div class="h2" style="position:relative"><span class="teal">Built</span> for Your Industry. Ready on Day One.</div>
+  <p class="lead intro">Scita is designed for scale, speed, and sector-specific workflows. From ecommerce storefronts to manufacturing dashboards, Scita adapts to your domain without friction.</p>
+  <div class="lbl">Out-of-the-box adaptability for industries like:</div>
+  <div class="inds">
+    <div class="card"><span class="ibadge"><span class="ic icon-shopping-cart"></span></span><b>Ecommerce<br>&amp; Retail</b></div>
+    <div class="card"><span class="ibadge"><span class="ic icon-factory"></span></span><b>Manufacturing<br>&amp; Industrial</b></div>
+    <div class="card"><span class="ibadge"><span class="ic icon-warehouse"></span></span><b>Distribution<br>&amp; Wholesale</b></div>
+    <div class="card"><span class="ibadge"><span class="ic icon-briefcase"></span></span><b>Services, Agencies<br>&amp; Beyond</b></div>
+  </div>
+  <div class="more">and more…</div>
+
+  <div class="stat">
+    <div class="big">84</div>
+    <div><div class="t">With 84 production-grade snippets, layout presets, and powerful customization layers,</div>
+      <div class="s">you're not just getting a theme; you're getting a launch-ready frontend built to scale with you.</div></div>
+  </div>
+
+  <div class="bento">
+    <div class="tile" style="left:0;top:0;width:760px;height:149px"><img src="../assets/shots/tiles/tile_electronics.png" alt=""></div>
+    <div class="tile bar-t fit" style="left:0;top:169px;width:760px;height:175px"><img src="../assets/shots/tiles/tile_categories.png" alt=""></div>
+    <div class="tile bar-g" style="left:0;top:364px;width:370px;height:250px"><img src="../assets/shots/tiles/tile_products.png" alt="" style="object-position:top"></div>
+    <div class="tile" style="left:0;top:634px;width:370px;height:200px"><img src="../assets/shots/tiles/tile_grocery.png" alt=""></div>
+    <div class="tile" style="left:390px;top:364px;width:370px;height:200px"><img src="../assets/shots/tiles/tile_collection.png" alt=""></div>
+    <div class="tile bar-t" style="left:390px;top:584px;width:370px;height:250px"><img src="../assets/shots/tiles/tile_webtoprint.png" alt="" style="object-position:top"></div>
+    <div class="tile ai" style="left:780px;top:0;width:340px;height:834px">
+      <img class="bg" src="../assets/renders/tile_ai.png" alt="">
+      <div class="shade"></div>
+      <div class="txt">
+        <div class="e">Intuitive</div>
+        <div class="h">Shopping Journey</div>
+        <div class="p">powered by</div>
+        <div class="big">AI <span>&amp;</span> AR</div>
+      </div>
+      <div class="dimline" style="left:40px;width:264px;top:466px"></div><div class="dim" style="left:172px;top:467px">224 cm</div>
+      <div class="frame" style="left:26px;top:480px;width:292px;height:126px"><i></i><i></i><i></i><i></i></div>
+      <div class="chip dark arch"><span class="ic icon-view"></span>AR View · True to Scale</div>
+    </div>
+  </div>
+</section>
+</body></html>

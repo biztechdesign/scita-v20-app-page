@@ -1,0 +1,101 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>03 AI Companion</title>
+<link rel="stylesheet" href="scita.css">
+<style>
+  .ai { padding: 88px 70px 96px 84px; background: radial-gradient(800px 500px at 85% 20%, rgba(129,197,76,.20), transparent 65%),
+         radial-gradient(900px 600px at 0% 100%, rgba(1,126,132,.16), transparent 60%), linear-gradient(180deg, #E6F4F3 0%, #F2FAFA 100%); }
+  .head { text-align: center; position: relative; }
+  .head .tag { display: inline-flex; gap: 8px; align-items: center; font-size: 14px; font-weight: 600; color: var(--teal); background: #fff; padding: 8px 16px; border-radius: 999px; box-shadow: var(--shadow-sm); margin-bottom: 18px; }
+  .head .sub { font-size: 23px; font-weight: 600; color: var(--teal); margin-top: 12px; line-height: 1.4; }
+  .body { display: flex; gap: 40px; margin-top: 60px; align-items: center; position: relative; }
+  .feats { width: 440px; flex: 0 0 440px; display: flex; flex-direction: column; gap: 18px; }
+  .feat { padding: 24px; display: flex; gap: 18px; }
+  .feat h4 { font-size: 20px; font-weight: 600; color: #1F2627; }
+  .feat p { font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin-top: 6px; }
+  .feat .mini { display: inline-flex; gap: 6px; align-items: center; font-size: 12px; font-weight: 600; color: var(--teal); background: var(--mint); padding: 4px 10px; border-radius: 999px; margin-top: 10px; }
+  .show { position: relative; flex: 1; height: 600px; }
+  .show .laptop { position: absolute; left: 96px; top: 140px; width: 540px; }
+  .fc { position: absolute; z-index: 3; background: #fff; border-radius: 18px; box-shadow: var(--shadow-lg); }
+  .chat { right: -10px; top: 0; width: 300px; overflow: hidden; }
+  .chat .hd { background: linear-gradient(120deg, var(--teal), #0E9A8F); color: #fff; font-size: 14px; font-weight: 600; padding: 12px 16px; display: flex; gap: 8px; align-items: center; }
+  .chat .hd .dot { margin-left: auto; font-size: 11px; font-weight: 500; opacity: .9; display: flex; align-items: center; gap: 5px; }
+  .chat .hd .dot::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+  .chat .msgs { padding: 14px; display: flex; flex-direction: column; gap: 10px; background: #F6FAFA; }
+  .bub { font-size: 13px; line-height: 1.45; padding: 9px 12px; border-radius: 14px; max-width: 86%; }
+  .bub.u { align-self: flex-end; background: var(--teal); color: #fff; border-bottom-right-radius: 4px; }
+  .bub.a { align-self: flex-start; background: #fff; color: #2B3233; border-bottom-left-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .prow { display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 12px; padding: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .prow img { width: 52px; height: 42px; object-fit: contain; border-radius: 8px; background: #F2F6F6; }
+  .prow .n { flex: 1; font-size: 12.5px; font-weight: 600; color: #1F2627; line-height: 1.3; } .prow .n span { display: block; color: var(--teal); font-weight: 700; }
+  .chat .in { display: flex; gap: 8px; align-items: center; padding: 10px 12px; border-top: 1px solid #E6EEEE; font-size: 12.5px; color: #9AA4A5; }
+  .chat .in .send { margin-left: auto; width: 30px; height: 30px; border-radius: 9px; background: var(--green-btn); color: #fff; display: grid; place-items: center; font-family: lucide; font-size: 15px; }
+  .vs { left: -20px; top: 20px; width: 300px; padding: 14px; }
+  .vs .t { font-size: 13.5px; font-weight: 700; color: #1F2627; display: flex; align-items: center; gap: 7px; } .vs .t .ic { color: var(--teal); font-size: 17px; }
+  .vs .flow { display: flex; align-items: center; gap: 8px; margin-top: 12px; }
+  .vs .up { width: 78px; height: 78px; border-radius: 12px; border: 2px dashed rgba(1,126,132,.5); display: grid; place-items: center; background: var(--ice); position: relative; }
+  .vs .up img { width: 64px; height: 50px; object-fit: contain; }
+  .vs .arrow { color: var(--teal); font-family: lucide; font-size: 20px; }
+  .vs .res { display: flex; gap: 6px; }
+  .vs .res img { width: 52px; height: 52px; object-fit: contain; border-radius: 10px; background: #F2F6F6; padding: 4px; }
+  .vs .cnt { font-size: 12px; color: var(--teal); font-weight: 600; margin-top: 10px; }
+  .cmp { left: -10px; bottom: 0; width: 330px; padding: 16px; }
+  .cmp .t { font-size: 13.5px; font-weight: 700; color: #1F2627; display: flex; align-items: center; gap: 7px; } .cmp .t .ic { color: var(--teal); font-size: 17px; }
+  .cmp .pair { display: grid; grid-template-columns: 1fr 30px 1fr; align-items: start; gap: 10px; margin-top: 12px; }
+  .cmp .pair div { min-width: 0; text-align: center; font-size: 12px; font-weight: 600; color: #2B3233; line-height: 1.35; }
+  .cmp .pair img { width: 100%; height: 84px; object-fit: contain; background: #F2F6F6; border-radius: 10px; margin-bottom: 6px; }
+  .cmp .vsb { width: 30px; height: 30px; margin-top: 27px; border-radius: 50%; background: var(--teal); color: #fff; font-size: 11px; font-weight: 700; display: grid; place-items: center; }
+  .cmp .sum { margin-top: 12px; padding: 10px 12px; border-radius: 12px; background: var(--ice); font-size: 12.5px; line-height: 1.5; color: #2B3233; box-shadow: inset 3px 0 0 var(--green); }
+  .cmp .sum b { color: var(--teal); display: flex; align-items: center; gap: 5px; font-size: 12px; margin-bottom: 3px; }
+</style></head>
+<body>
+<section class="fold ai dots-bg">
+  <div class="head">
+    <div class="tag"><span class="ic icon-sparkles"></span>New in Scita 20</div>
+    <div class="h2">AI-Powered Shopping Companion</div>
+    <div class="sub">AI Functionalities That Help Shoppers Search, Compare, and Decide</div>
+  </div>
+  <div class="body">
+    <div class="feats">
+      <div class="feat card"><span class="ibadge solid"><span class="ic icon-bot"></span></span>
+        <div><h4>Shopping Assistant</h4><p>Helps shoppers find the right products by asking, not scrolling. Works with the AI model of your choice.</p></div></div>
+      <div class="feat card"><span class="ibadge solid"><span class="ic icon-camera"></span></span>
+        <div><h4>Visual Search</h4><p>Shoppers upload a photo and get similar products, matched on the attributes and number of results you choose.</p></div></div>
+      <div class="feat card"><span class="ibadge solid"><span class="ic icon-git-compare"></span></span>
+        <div><h4>Product Comparison</h4><p>Simplifies product comparison and helps shoppers decide which option fits their use case best with the help of a summary generated from your data.</p></div></div>
+    </div>
+    <div class="show">
+      <div class="laptop"><div class="lid"><img src="../assets/shots/grocery_desktop.png" alt=""></div><div class="base"></div></div>
+
+      <div class="fc vs">
+        <div class="t"><span class="ic icon-camera"></span>Search by Photo</div>
+        <div class="flow">
+          <div class="up"><img src="../assets/products/doritos.png" alt=""></div>
+          <span class="arrow icon-arrow-right"></span>
+          <div class="res"><img src="../assets/products/doritos.png" alt=""><img src="../assets/products/pringles.png" alt=""><img src="../assets/products/cookies.png" alt=""></div>
+        </div>
+        <div class="cnt">12 Similar Products Found</div>
+      </div>
+
+      <div class="fc chat">
+        <div class="hd"><span class="ic icon-sparkles"></span>Shopping Assistant<span class="dot">Online</span></div>
+        <div class="msgs">
+          <div class="bub u">Crunchy snacks under $10?</div>
+          <div class="bub a">Here are 3 picks. Add the top-rated one?</div>
+          <div class="prow"><img src="../assets/products/pringles.png" alt=""><div class="n">Pringles Potato Chips<span>$6.50</span></div><div class="btn sm">Add</div></div>
+        </div>
+        <div class="in">Ask anything about products…<span class="send icon-send"></span></div>
+      </div>
+
+      <div class="fc cmp">
+        <div class="t"><span class="ic icon-git-compare"></span>Product Comparison</div>
+        <div class="pair">
+          <div><img src="../assets/products/choco.png" alt="" style="padding:16px 0">Choco Milk<br>250 ml</div>
+          <span class="vsb">VS</span>
+          <div><img src="../assets/products/choco.png" alt="">Choco Milk<br>Family Pack</div>
+        </div>
+        <div class="sum"><b><span class="ic icon-sparkles"></span>AI Summary</b>A is the handy single serve for on-the-go. B comes in a family pack, so it's better value for big households.</div>
+      </div>
+    </div>
+  </div>
+</section>
+</body></html>

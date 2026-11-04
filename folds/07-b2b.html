@@ -1,0 +1,39 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>07 B2B</title>
+<link rel="stylesheet" href="scita.css">
+<style>
+  .b2b { padding: 88px 84px 96px; background: radial-gradient(800px 420px at 100% 0%, rgba(129,197,76,.16), transparent 65%), linear-gradient(180deg, #F2FAFA 0%, #E6F4F3 100%); }
+  .top { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; position: relative; }
+  .top .lead { max-width: 500px; }
+  .top > div { flex: 0 0 640px; }
+  .stats { display: flex; gap: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 52px; position: relative; }
+  .c { padding: 28px 26px; display: flex; flex-direction: column; gap: 16px; position: relative; overflow: hidden; }
+  .c h4 { font-size: 19px; font-weight: 600; color: #1F2627; line-height: 1.3; }
+  .c p { font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
+  .ui { margin-top: auto; display: flex; gap: 10px; align-items: center; padding-top: 6px; }
+  .ui .btn.sm { box-shadow: none; }
+  .ui .blur { height: 10px; width: 70px; border-radius: 5px; background: linear-gradient(90deg, #DCE6E6, #EEF3F3); }
+  .ui .lock { font-size: 12.5px; color: #6B7576; display: flex; gap: 6px; align-items: center; }
+</style></head>
+<body>
+<section class="fold b2b dots-bg">
+  <div class="top">
+    <div>
+      <div class="eyebrow">State of the Art</div>
+      <div class="h2 mt-8">Smart, Seamless, and<br>Stunning B2B Features</div>
+    </div>
+    <p class="lead">Handles everything from multi-tiered pricing to quote requests; the features adapt to the layered decision-making of business customers.</p>
+  </div>
+  <div class="grid">
+    <div class="c card"><span class="ibadge solid"><span class="ic icon-clipboard-list"></span></span><h4>Quick Order List</h4><p>Add bulk items directly by SKU or name—no need to browse multiple product pages.</p></div>
+    <div class="c card"><span class="ibadge solid"><span class="ic icon-users"></span></span><h4>Company-Level User Management</h4><p>Assign roles and permissions to approvers, buyers, and finance personnel within a single B2B account.</p></div>
+    <div class="c card"><span class="ibadge solid"><span class="ic icon-map-pin"></span></span><h4>Multi-Address Shipping &amp; Billing</h4><p>Because your B2B clients often ship to warehouses and bill to HQ.</p></div>
+    <div class="c card"><span class="ibadge solid"><span class="ic icon-repeat"></span></span><h4>Reorder in Seconds</h4><p>One-click reorder from past invoices. Ideal for repeat purchases and consumables.</p></div>
+    <div class="c card"><span class="ibadge solid"><span class="ic icon-message-square-quote"></span></span><h4>Request a Quote</h4><p>Add a Request a Quote option site-wide, for specific customers, or for individual products, so shoppers can submit price inquiries directly.</p>
+      <div class="ui"><span class="blur"></span><span class="btn sm"><span class="ic icon-message-square-quote"></span>Request a Quote</span></div></div>
+    <div class="c card"><span class="ibadge solid"><span class="ic icon-lock"></span></span><h4>Hide Price &amp; Disable Cart</h4><p>Show prices and enable checkout only for registered or approved users.</p>
+      <div class="ui"><span class="lock"><span class="ic icon-eye-off"></span>Price hidden</span><span class="btn sm"><span class="ic icon-log-in"></span>Login for Price</span></div></div>
+  </div>
+</section>
+</body></html>

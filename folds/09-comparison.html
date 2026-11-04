@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>09 Comparison</title>
+<link rel="stylesheet" href="scita.css">
+<style>
+  .cmp { padding: 88px 104px 96px; background: radial-gradient(700px 500px at 0% 0%, rgba(255,255,255,.35), transparent 60%), linear-gradient(135deg, #0F5C61 0%, #017E84 45%, #4FA88F 80%, #81C54C 120%); }
+  .vs { display: flex; justify-content: center; align-items: center; gap: 22px; position: relative; }
+  .logo { background: #fff; border-radius: 18px; padding: 16px 30px; text-align: center; box-shadow: var(--shadow-md); }
+  .logo b { display: block; font-size: 38px; font-weight: 800; letter-spacing: 8px; color: #1D2526; line-height: 1; }
+  .logo span { font-size: 13px; font-weight: 600; color: var(--teal); letter-spacing: 1px; }
+  .badge { width: 62px; height: 62px; border-radius: 50%; background: #0B4548; color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 20px; box-shadow: 0 0 0 6px rgba(255,255,255,.25); }
+  .other { border-radius: 18px; padding: 16px 28px; font-size: 26px; font-weight: 700; line-height: 1.2; color: #fff; background: rgba(255,255,255,.14); box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.4); }
+  .table { margin-top: 50px; background: #fff; border-radius: var(--r-lg); padding: 18px 40px 26px; box-shadow: var(--shadow-lg); position: relative; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; font-size: 22px; font-weight: 700; color: #1D2526; padding: 22px 0 18px; border-bottom: 3px solid var(--teal); }
+  th.c, td.c { text-align: center; width: 190px; }
+  th.s { color: var(--teal); background: rgba(1,126,132,.05); border-radius: 12px 12px 0 0; }
+  td { font-size: 18px; color: #2B3233; padding: 20px 0; border-bottom: 1px solid #E5EEEE; }
+  tr:last-child td { border-bottom: 0; }
+  td.c .tick, td.c .cross { margin: 0 auto; }
+  td.scol { background: linear-gradient(180deg, rgba(1,126,132,.05), rgba(129,197,76,.07)); }
+  .part { display: inline-flex; align-items: center; height: 30px; font-size: 14px; font-weight: 600; color: #7E5F14; background: #FBF0D6; padding: 0 14px; border-radius: 999px; }
+  td .f { display: flex; align-items: center; gap: 14px; font-weight: 500; }
+  td .f .ic { width: 38px; height: 38px; border-radius: 11px; background: var(--mint); color: var(--teal); display: grid; place-items: center; font-size: 19px; }
+</style></head>
+<body>
+<section class="fold cmp">
+  <div class="vs">
+    <div class="logo"><b>SCITA</b><span>— Simply Versatile —</span></div>
+    <div class="badge">VS</div>
+    <div class="other">Other Odoo<br>Themes</div>
+  </div>
+  <div class="table">
+    <table>
+      <tr><th>Core Features</th><th class="c s">Scita</th><th class="c">Other</th></tr>
+      <tr><td><div class="f"><span class="ic icon-rotate-3d"></span>3D View &amp; AR “View in Your Room”</div></td><td class="c scol"><div class="tick icon-check"></div></td><td class="c"><div class="cross icon-x"></div></td></tr>
+      <tr><td><div class="f"><span class="ic icon-scan-qr-code"></span>Image Hotspot with Live Product Cards</div></td><td class="c scol"><div class="tick icon-check"></div></td><td class="c"><div class="cross icon-x"></div></td></tr>
+      <tr><td><div class="f"><span class="ic icon-bot"></span>AI Shopping Assistant (Any AI Model)</div></td><td class="c scol"><div class="tick icon-check"></div></td><td class="c"><span class="part">Partially</span></td></tr>
+      <tr><td><div class="f"><span class="ic icon-camera"></span>AI Visual Search</div></td><td class="c scol"><div class="tick icon-check"></div></td><td class="c"><div class="cross icon-x"></div></td></tr>
+      <tr><td><div class="f"><span class="ic icon-bell-ring"></span>Shopper-Set Price Drop Alerts</div></td><td class="c scol"><div class="tick icon-check"></div></td><td class="c"><div class="cross icon-x"></div></td></tr>
+      <tr><td><div class="f"><span class="ic icon-message-square-quote"></span>Configurable “Request a Quote”</div></td><td class="c scol"><div class="tick icon-check"></div></td><td class="c"><span class="part">Partially</span></td></tr>
+    </table>
+  </div>
+</section>
+</body></html>
