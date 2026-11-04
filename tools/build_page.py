@@ -51,10 +51,10 @@ def faq_html():
             <div class="accordion-item" style="border:0; border-bottom:1px solid #DCEBEA; background:transparent">
               <h3 class="accordion-header m-0" id="scita_faq_h{i}">
                 <a class="accordion-button{'' if first else ' collapsed'}" data-bs-toggle="collapse" href="#scita_faq_{i}" role="button" aria-expanded="{'true' if first else 'false'}" aria-controls="scita_faq_{i}"
-                   style="{FONT}; font-size:16px; font-weight:600; color:#1F2627; text-decoration:none; background:transparent; padding:20px 4px; line-height:1.4">{q}</a>
+                   style="{FONT}; font-size:17px; font-weight:600; color:#1F2627; text-decoration:none; background:transparent; padding:20px 4px; line-height:1.4">{q}</a>
               </h3>
               <div id="scita_faq_{i}" class="accordion-collapse collapse{' show' if first else ''}" aria-labelledby="scita_faq_h{i}" data-bs-parent="#scita_faq">
-                <div class="accordion-body" style="{FONT}; font-size:14.5px; line-height:1.6; color:{INK}; padding:0 4px 20px">{a}</div>
+                <div class="accordion-body" style="{FONT}; font-size:16px; line-height:1.65; color:{INK}; padding:0 4px 20px">{a}</div>
               </div>
             </div>''')
     return "".join(items)
@@ -70,7 +70,7 @@ def body():
       <!-- FAQs: Bootstrap 5 accordion (its built-in chevron flips on every open / close) -->
       <div class="shadow overflow-hidden px-3 py-4 p-md-5" style="margin-top:30px; background-color:#fff; border-radius:30px">
         <h2 class="text-center display-6" style="{FONT}; font-weight:700; color:{TEAL}; margin:0 0 6px">FAQs</h2>
-        <p class="text-center" style="{FONT}; font-size:15px; color:#5B6466; margin:0 0 30px">Everything you need to know about Scita</p>
+        <p class="text-center" style="{FONT}; font-size:16.5px; color:#5B6466; margin:0 0 30px">Everything you need to know about Scita</p>
         <div class="accordion accordion-flush" id="scita_faq">{faq_html()}
         </div>
       </div>
@@ -80,10 +80,10 @@ def body():
         <h2 class="text-center display-6" style="{FONT}; font-weight:700; color:{TEAL}; margin:0 0 30px">Changelog</h2>
         <div class="row justify-content-center">
           <div class="col-md-10">
-            <div style="background-color:{HERO}; padding:12px 22px; border-radius:14px 14px 0 0; color:#fff; {FONT}; font-weight:600; font-size:16px">Version 20.0</div>
+            <div style="background-color:{HERO}; padding:12px 22px; border-radius:14px 14px 0 0; color:#fff; {FONT}; font-weight:600; font-size:17px">Version 20.0</div>
             <div class="d-flex flex-wrap align-items-start" style="background-color:#fff; padding:18px 22px; border-radius:0 0 14px 14px; gap:16px">
               <span style="background-color:{MINT}; color:{TEAL}; padding:4px 12px; border-radius:20px; font-size:12px; font-weight:700; {FONT}">Release</span>
-              <ul class="list-unstyled m-0" style="{FONT}; font-size:14px; color:{INK}; font-weight:500">
+              <ul class="list-unstyled m-0" style="{FONT}; font-size:15.5px; line-height:1.6; color:{INK}; font-weight:500">
                 <li class="mb-1">Initial release for Odoo 20</li>
                 <li class="mb-1">New: 3D &amp; AR product view and Image Hotspot</li>
                 <li class="mb-1">New: AI Shopping Assistant, Visual Search and Product Comparison</li>
@@ -99,8 +99,8 @@ def body():
         <div class="row align-items-center p-4 p-lg-5 m-0">
           <div class="col-lg-8">
             <h2 class="fs-2" style="{FONT}; font-weight:700; color:#1F2627; margin:0 0 12px; line-height:1.25">Technical Help, Queries &amp; <span style="color:{TEAL}">Support</span></h2>
-            <p style="{FONT}; font-size:15px; line-height:26px; color:{INK}; margin:0 0 20px">We offer extremely convenient and quick support for all your technical help &amp; support requests. Our support service is the parameter that defines the success of our business and has earned us our brand name.</p>
-            <a href="mailto:support@appjetty.com" style="display:inline-block; background-color:{GREEN_BTN}; color:#fff; height:44px; line-height:44px; padding:0 22px; border-radius:10px; box-shadow:0 4px 12px rgba(95,168,50,.28); {FONT}; font-weight:600; font-size:15px; text-decoration:none">support@appjetty.com</a>
+            <p style="{FONT}; font-size:16.5px; line-height:1.65; color:{INK}; margin:0 0 20px">We offer extremely convenient and quick support for all your technical help &amp; support requests. Our support service is the parameter that defines the success of our business and has earned us our brand name.</p>
+            <a href="mailto:support@appjetty.com" style="display:inline-block; background-color:{GREEN_BTN}; color:#fff; height:44px; line-height:44px; padding:0 22px; border-radius:10px; box-shadow:0 4px 12px rgba(95,168,50,.28); {FONT}; font-weight:600; font-size:16px; text-decoration:none">support@appjetty.com</a>
           </div>
           <div class="col-lg-4 text-center mt-4 mt-lg-0">
             <img src="images/support_1.png" class="img img-fluid" alt="AppJetty support" loading="lazy" style="max-height:260px">
