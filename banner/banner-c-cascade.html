@@ -1,0 +1,100 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Scita v20 Banner C - Feature Cascade</title>
+<link rel="stylesheet" href="../folds/scita.css">
+<style>
+  body { background: #fff; }
+  .bn { width: 538px; height: 269px; position: relative; overflow: hidden; color: #fff; font-family: "Poppins", sans-serif;
+    background: radial-gradient(300px 220px at 78% 50%, rgba(1,126,132,.75), transparent 70%),
+                radial-gradient(200px 160px at 0% 100%, rgba(129,197,76,.18), transparent 70%),
+                linear-gradient(135deg, #0F5C61 0%, #0B4548 100%); }
+  .bn::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 22px 22px; }
+  .left { position: absolute; left: 22px; top: 26px; width: 150px; z-index: 5; }
+  .logo { display: flex; align-items: center; gap: 7px; }
+  .logo b { font-size: 17px; font-weight: 800; letter-spacing: 3.5px; line-height: 1; }
+  .ver { font-size: 10.5px; font-weight: 800; color: #0B4548; background: linear-gradient(92deg, #A6E07A, #81C54C); padding: 2px 7px; border-radius: 999px; }
+  .tag { font-size: 7px; font-weight: 600; color: #9FD3CF; margin-top: 3px; letter-spacing: .4px; }
+  .hl { font-size: 21px; font-weight: 800; line-height: 1.06; margin-top: 20px; letter-spacing: -.5px; }
+  .hl em { font-style: normal; background: linear-gradient(92deg, #A6E07A, #81C54C 50%, #4FC3B9); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .feats { margin-top: 12px; font-size: 8.5px; line-height: 1.45; color: #D7ECEA; }
+  .feats b { color: var(--green); font-weight: 800; font-size: 13px; }
+  .feats span { font-size: 7.5px; font-weight: 600; padding: 3px 7px; border-radius: 999px; background: rgba(255,255,255,.1); box-shadow: inset 0 0 0 1px rgba(255,255,255,.2); }
+
+  .deck { position: absolute; left: 176px; top: 0; right: 0; bottom: 0; perspective: 800px; }
+  .c { position: absolute; width: 104px; height: 150px; border-radius: 11px; background: #fff; color: #1F2627; padding: 8px 20px 8px 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.18), 0 18px 30px rgba(0,0,0,.28); transform-style: preserve-3d; }
+  .c .hd { display: flex; align-items: center; gap: 4px; font-size: 7.2px; font-weight: 700; line-height: 1.1; }
+  .c .hd i { width: 15px; height: 15px; flex: 0 0 15px; border-radius: 5px; display: grid; place-items: center; font-family: lucide; font-style: normal; font-size: 9px; color: #fff; background: linear-gradient(145deg, #0E8F95, var(--teal)); }
+  .c .hd i.g { background: linear-gradient(145deg, #81C54C, #5FA832); }
+  /* 3D card */
+  .c1 .img { margin-top: 6px; height: 72px; border-radius: 8px; background: radial-gradient(circle at 50% 70%, #fff, #E6F0F0 75%); position: relative; overflow: hidden; }
+  .c1 .img img { position: absolute; left: 50%; top: 52%; width: 90px; transform: translate(-50%,-50%); }
+  .c1 .img .o { position: absolute; left: 50%; bottom: 7px; width: 66px; height: 16px; transform: translateX(-50%); border: 1.5px dashed rgba(1,126,132,.5); border-radius: 50%; }
+  .c1 .n { font-size: 7.5px; font-weight: 600; margin-top: 6px; } .c1 .p { font-size: 9px; font-weight: 800; color: var(--teal); }
+  .c1 .b { margin-top: 5px; height: 16px; border-radius: 5px; background: var(--green-btn); color: #fff; font-size: 7px; font-weight: 700; display: grid; place-items: center; }
+  /* AI chat */
+  .c2 .m { display: flex; flex-direction: column; gap: 4px; margin-top: 7px; }
+  .bub { font-size: 6.6px; line-height: 1.3; padding: 4px 6px; border-radius: 7px; max-width: 90%; }
+  .bub.u { align-self: flex-start; background: var(--teal); color: #fff; border-bottom-right-radius: 2px; }
+  .bub.a { align-self: flex-start; background: #EEF5F5; border-bottom-left-radius: 2px; }
+  .prow { display: flex; align-items: center; gap: 5px; background: #F6FAFA; border-radius: 7px; padding: 4px; }
+  .prow img { width: 22px; height: 18px; object-fit: contain; } .prow b { font-size: 6.5px; flex: 1; } .prow s { text-decoration: none; font-size: 6px; font-weight: 700; color: #fff; background: var(--green-btn); padding: 2px 5px; border-radius: 4px; }
+  .c2 .ps { display: flex; align-items: center; gap: 4px; font-size: 6.6px; font-weight: 700; color: var(--teal); border: 1.2px dashed rgba(1,126,132,.5); background: var(--ice); border-radius: 6px; padding: 4px 5px; }
+  .c2 .ps .ic { font-size: 9px; }
+  /* visual search */
+  .c3 .up { margin-top: 7px; height: 40px; border-radius: 8px; border: 1.5px dashed rgba(1,126,132,.5); background: var(--ice); display: grid; place-items: center; }
+  .c3 .up img { height: 36px; }
+  .c3 .r { display: grid; grid-template-columns: repeat(3,1fr); gap: 4px; margin-top: 6px; }
+  .c3 .r img { width: 100%; height: 22px; object-fit: contain; background: #F2F6F6; border-radius: 5px; padding: 2px; }
+  .c3 .s { font-size: 6.5px; color: var(--teal); font-weight: 700; margin-top: 5px; }
+  /* price drop */
+  .c4 { background: linear-gradient(160deg, #81C54C, #5FA832); color: #fff; }
+  .c4 .hd i { background: rgba(255,255,255,.25); }
+  .c4 .big { font-size: 25px; font-weight: 800; line-height: 1; margin-top: 14px; letter-spacing: -1px; }
+  .c4 .w { font-size: 7.5px; font-weight: 600; margin-top: 3px; opacity: .95; }
+  .c4 .mail { margin-top: 12px; background: #fff; color: #1F2627; border-radius: 7px; padding: 5px 6px; font-size: 6.5px; font-weight: 600; display: flex; gap: 5px; align-items: center; }
+  .c4 .mail .ic { color: var(--teal); font-size: 9px; }
+  /* free shipping */
+  .c5 .it { display: flex; align-items: center; gap: 5px; margin-top: 6px; font-size: 6.5px; font-weight: 600; }
+  .c5 .it img { width: 20px; height: 20px; object-fit: contain; background: #F2F6F6; border-radius: 5px; }
+  .c5 .it span { flex: 1; } .c5 .it b { font-size: 7px; }
+  .c5 .pb { margin-top: 8px; padding: 5px; border-radius: 7px; background: #F4FAEE; font-size: 6.5px; font-weight: 600; }
+  .c5 .pb b { color: var(--green-btn); }
+  .c5 .bar { height: 5px; border-radius: 4px; background: #E1ECDA; margin-top: 4px; position: relative; }
+  .c5 .bar i { position: absolute; inset: 0 25% 0 0; border-radius: 4px; background: linear-gradient(90deg, var(--teal), var(--green)); }
+  .c5 .ok { margin-top: 6px; font-size: 6.5px; font-weight: 700; color: var(--green-btn); display: flex; gap: 4px; align-items: center; }
+</style></head>
+<body>
+<div class="bn" id="banner">
+  <div class="left">
+    <div class="logo"><b>SCITA</b><span class="ver">v20</span></div>
+    <div class="tag">SIMPLY VERSATILE · ODOO 20 THEME</div>
+    <div class="hl"><em>Faster, Smarter</em><br>&amp; More Immersive</div>
+    <div class="feats"><b>6</b> new features: 3D &amp; AR, AI assistant, visual search, price alerts, free-shipping bar and PWA speed.</div>
+  </div>
+  <div class="deck">
+    <div class="c c1" style="left:0px;top:62px;transform:rotateZ(-5deg);z-index:1">
+      <div class="hd"><i class="icon-rotate-3d"></i>3D &amp; AR View</div>
+      <div class="img"><div class="o"></div><img src="sofa_t.png" alt=""></div>
+      <div class="n">Linen Sofa</div><div class="p">$749.00</div><div class="b">View in Your Room</div>
+    </div>
+    <div class="c c2" style="left:90px;top:34px;transform:rotateZ(-1.5deg);z-index:2">
+      <div class="hd"><i class="icon-bot"></i>AI Assistant</div>
+      <div class="m"><div class="bub u">Snacks under $10?</div><div class="bub a">Top pick for you:</div>
+        <div class="prow"><img src="../assets/products/pringles.png" alt=""><b>Pringles<br>$6.50</b></div>
+        <div class="ps"><span class="ic icon-camera"></span>Search by photo</div></div>
+    </div>
+    <div class="c c4" style="left:180px;top:40px;transform:rotateZ(2deg);z-index:3">
+      <div class="hd"><i class="icon-bell-ring"></i>Price Drop Alert</div>
+      <div class="big">-15%</div><div class="w">Your saved sofa<br>just dropped</div>
+      <div class="mail"><span class="ic icon-mail"></span>$636 <span style="text-decoration:line-through;opacity:.5">$749</span></div>
+    </div>
+    <div class="c c5" style="left:252px;top:66px;transform:rotateZ(5deg);z-index:4;padding-right:8px">
+      <div class="hd"><i class="g icon-truck"></i>Free Shipping</div>
+      <div class="it"><img src="../assets/products/tajin.png" alt=""><span>Spice</span><b>$18</b></div>
+      <div class="it"><img src="../assets/products/vinegar.png" alt=""><span>Vinegar</span><b>$18</b></div>
+      <div class="pb">Add <b>$14</b> more<div class="bar"><i></i></div></div>
+      <div class="ok"><span class="ic icon-party-popper"></span>Unlocked!</div>
+    </div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Scita v20 Banner D - Big 20</title>
+<link rel="stylesheet" href="../folds/scita.css">
+<style>
+  body { background: #fff; }
+  .bn { width: 538px; height: 269px; position: relative; overflow: hidden; font-family: "Poppins", sans-serif; color: #1F2627;
+    background: radial-gradient(260px 220px at 20% 40%, #FFFFFF, transparent 70%),
+                radial-gradient(260px 200px at 100% 100%, rgba(129,197,76,.20), transparent 70%),
+                linear-gradient(135deg, #F2FAFA 0%, #E6F4F3 100%); }
+  .bn::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(1,126,132,.14) 1px, transparent 1px); background-size: 12px 12px;
+    -webkit-mask-image: linear-gradient(180deg, #000, transparent 80%); mask-image: linear-gradient(180deg, #000, transparent 80%); }
+  .top { position: absolute; left: 22px; top: 18px; display: flex; align-items: baseline; gap: 8px; z-index: 3; }
+  .top b { font-size: 16px; font-weight: 800; letter-spacing: 3.5px; color: #0B4548; }
+  .top span { font-size: 7.5px; font-weight: 600; color: var(--teal); letter-spacing: .4px; }
+  /* giant 20 with the room render inside */
+  .num { position: absolute; left: 12px; top: 26px; font-size: 212px; font-weight: 800; line-height: 1; letter-spacing: -14px;
+    background: url("../assets/renders/room_wide.png") 46% 62% / 360px auto no-repeat; -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 6px 10px rgba(15,92,97,.22)); }
+  .num-outline { position: absolute; left: 12px; top: 26px; font-size: 212px; font-weight: 800; line-height: 1; letter-spacing: -14px; color: transparent; -webkit-text-stroke: 1.5px rgba(1,126,132,.55); }
+  .vtag { position: absolute; left: 22px; bottom: 18px; z-index: 3; font-size: 9px; font-weight: 700; color: #fff; background: linear-gradient(90deg, var(--teal), #0E8F95); padding: 4px 10px; border-radius: 999px; box-shadow: 0 4px 10px rgba(1,126,132,.3); }
+  .vtag em { font-style: normal; color: #C9F09F; }
+  .hs { width: 16px; height: 16px; margin: -8px 0 0 -8px; z-index: 3; box-shadow: 0 0 0 4px rgba(1,126,132,.28), 0 0 0 9px rgba(1,126,132,.12), 0 3px 6px rgba(0,0,0,.2); }
+  .hs::after { width: 7px; height: 7px; }
+  /* feature rail */
+  .rail { position: absolute; right: 14px; top: 14px; width: 232px; z-index: 3; }
+  .rail h2 { font-size: 13.5px; font-weight: 800; line-height: 1.1; color: #0B4548; letter-spacing: -.2px; }
+  .rail h2 em { font-style: normal; color: var(--green-btn); }
+  .rows { margin-top: 7px; display: flex; flex-direction: column; gap: 4px; }
+  .r { display: flex; align-items: center; gap: 6px; background: #fff; border-radius: 8px; padding: 3px 7px 3px 4px; box-shadow: 0 1px 2px rgba(15,92,97,.05), 0 4px 10px rgba(15,92,97,.08); border: 1px solid rgba(1,126,132,.08); }
+  .r i { width: 19px; height: 19px; flex: 0 0 19px; border-radius: 6px; display: grid; place-items: center; font-family: lucide; font-style: normal; font-size: 10.5px; color: #fff; background: linear-gradient(145deg, #0E8F95, var(--teal)); }
+  .r i.g { background: linear-gradient(145deg, #81C54C, #5FA832); }
+  .r .t { flex: 1; font-size: 8px; font-weight: 700; line-height: 1.12; } .r .t small { display: block; font-size: 6.2px; line-height: 1.15; font-weight: 500; color: #6B7576; }
+  .vis { flex: 0 0 auto; }
+  .v3d { font-size: 7px; font-weight: 800; color: #fff; background: #10292B; padding: 2px 5px; border-radius: 4px; }
+  .vchat { font-size: 6.5px; color: #fff; background: var(--teal); padding: 3px 6px; border-radius: 6px 6px 2px 6px; }
+  .vdrop { font-size: 9.5px; font-weight: 800; color: var(--green-btn); }
+  .vbar { width: 48px; height: 5px; border-radius: 4px; background: #E1ECDA; position: relative; } .vbar b { position: absolute; inset: 0 22% 0 0; border-radius: 4px; background: linear-gradient(90deg, var(--teal), var(--green)); }
+  .vg { width: 22px; height: 22px; position: relative; } .vg svg { width: 22px; height: 22px; transform: rotate(-90deg); }
+  .vg span { position: absolute; inset: 0; display: grid; place-items: center; font-size: 6.5px; font-weight: 800; color: var(--green-btn); }
+</style></head>
+<body>
+<div class="bn" id="banner">
+  <div class="top"><b>SCITA</b><span>SIMPLY VERSATILE</span></div>
+  <div class="num">20</div><div class="num-outline">20</div>
+  <span class="hs active" style="left:116px;top:150px"></span>
+  <div class="vtag">The <em>Odoo 20</em> Theme</div>
+  <div class="rail">
+    <h2>Faster, Smarter &amp;<br><em>More Immersive</em></h2>
+    <div class="rows">
+      <div class="r"><i class="icon-rotate-3d"></i><div class="t">3D &amp; AR Product View<small>Image hotspots, view in your room</small></div><span class="vis v3d">3D</span></div>
+      <div class="r"><i class="icon-bot"></i><div class="t">AI Shopping Assistant<small>Works with any AI model</small></div><span class="vis vchat">Ask AI</span></div>
+      <div class="r"><i class="icon-camera"></i><div class="t">AI Visual Search &amp; Compare<small>Find by photo, compare smarter</small></div><span class="vis ic icon-git-compare" style="color:var(--teal);font-size:13px"></span></div>
+      <div class="r"><i class="g icon-bell-ring"></i><div class="t">Price Drop Alerts<small>Shopper-set % or amount</small></div><span class="vis vdrop">-15%</span></div>
+      <div class="r"><i class="g icon-truck"></i><div class="t">Free-Shipping Progress<small>Nudges bigger carts</small></div><span class="vis vbar"><b></b></span></div>
+      <div class="r"><i class="icon-gauge"></i><div class="t">PWA &amp; Speed<small>Desktop 90+ · Mobile 80+</small></div><span class="vis vg"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="46" fill="none" stroke="#E4EFEA" stroke-width="16"/><circle cx="60" cy="60" r="46" fill="none" stroke="#81C54C" stroke-width="16" stroke-dasharray="289" stroke-dashoffset="26"/></svg><span>90+</span></span></div>
+    </div>
+  </div>
+</div>
+</body></html>
