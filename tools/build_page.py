@@ -30,11 +30,12 @@ FONT = "font-family:'Poppins', sans-serif"
 # FAQ: live-page text with the client's fixes (doc + Odoo 20 decision)
 faq = json.load(open(ROOT / "tools" / "faq_source.json", encoding="utf8"))
 fix = {
-    "This theme is compatible with Odoo V17,V18 and V19.": "This theme is compatible with Odoo v17, v18, v19, and v20.",
+    "This theme is compatible with Odoo V17,V18 and V19.": "This theme is compatible with Odoo v17, v18, v19, and v20. In line with Odoo's own support policy, we provide support and updates for the three latest Odoo versions, currently v18, v19, and v20.",
     "Is this theme compatible with Odoo's Multi Website Feature?": "Is this theme compatible with Odoo's Multi-Website feature?",
 }
 def clean(t):
     t = fix.get(t, t)
+    t = t.replace('Please refer to our support policy ', 'We support the three latest Odoo versions (currently v18, v19, and v20). For full details, please refer to our support policy ')
     t = t.replace("Yes, our theme scita is compatible with Odoo's Multi Website Feature. You can add our theme scita for multiple websites if they all are on Odoo v12",
                   "Yes, our theme Scita is compatible with Odoo's Multi-Website feature. You can add our theme Scita for multiple websites if they all are on Odoo v17, v18, v19, or v20")
     t = t.replace('<span style="color:#00008B; font-weight:bold"> https://www.appjetty.com/support-policy.htm</span>',

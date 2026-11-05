@@ -7,7 +7,7 @@
   .top .lead { margin-top: 14px; }
   .body { display: flex; gap: 56px; margin-top: 54px; align-items: center; position: relative; }
   .phonewrap { position: relative; width: 330px; flex: 0 0 330px; margin-left: 20px; }
-  .phone .screen { height: auto; }
+  .phone .screen { height: 566px; }
   .phone .screen img { width: 100%; height: auto; padding-top: 30px; background: #fff; }
   .nav { position: absolute; left: 22px; right: 22px; bottom: 22px; height: 66px; border-radius: 22px; background: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.18);
     display: flex; justify-content: space-around; align-items: center; z-index: 4; font-family: lucide; font-size: 22px; color: #7B8789; }
@@ -23,6 +23,7 @@
   .appicon span { font-size: 14px; color: #6B7576; text-align: center; line-height: 1.4; }
   .speed { flex: 1; padding: 22px 26px; }
   .speed .t { font-size: 18px; font-weight: 700; color: #1F2627; display: flex; align-items: center; gap: 8px; } .speed .t .ic { color: var(--teal); font-size: 19px; }
+  .speed .note { font-size: 12px; line-height: 1.5; color: #7A8486; margin-top: 12px; text-align: center; }
   .gauges { display: flex; justify-content: space-around; margin-top: 14px; }
   .g { text-align: center; }
   .g .ring { position: relative; width: 132px; height: 132px; }
@@ -40,7 +41,7 @@
   </div>
   <div class="body">
     <div class="phonewrap">
-      <div class="phone"><div class="notch"></div><div class="screen"><img src="../assets/shots/electronics_mobile.png" alt="">
+      <div class="phone"><div class="notch"></div><div class="screen"><img src="../assets/shots/grocery_mobile.png" alt="">
       </div></div>
     </div>
     <div class="right">
@@ -51,12 +52,13 @@
         <div class="speed card">
           <div class="t"><span class="ic icon-gauge"></span>Google PageSpeed Score</div>
           <div class="gauges">
-            <div class="g"><div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="none" stroke="#E4EFEA" stroke-width="11"/><circle cx="60" cy="60" r="50" fill="none" stroke="url(#gr)" stroke-width="11" stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="28"/>
-              <defs><linearGradient id="gr" x1="0" x2="1"><stop offset="0" stop-color="#81C54C"/><stop offset="1" stop-color="#5FA832"/></linearGradient></defs></svg><div class="v">90+</div></div>
+            <div class="g"><div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="none" stroke="#E4EFEA" stroke-width="11"/><circle cx="60" cy="60" r="50" fill="none" stroke="url(#gr)" stroke-width="11" stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="62.8"/>
+              <defs><linearGradient id="gr" x1="0" x2="1"><stop offset="0" stop-color="#81C54C"/><stop offset="1" stop-color="#5FA832"/></linearGradient></defs></svg><div class="v">80+</div></div>
               <div class="l"><span class="ic icon-monitor"></span>Desktop Speed</div></div>
-            <div class="g"><div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="none" stroke="#E4EFEA" stroke-width="11"/><circle cx="60" cy="60" r="50" fill="none" stroke="url(#gr)" stroke-width="11" stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="60"/></svg><div class="v">80+</div></div>
+            <div class="g"><div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="none" stroke="#E4EFEA" stroke-width="11"/><circle cx="60" cy="60" r="50" fill="none" stroke="url(#gr)" stroke-width="11" stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="62.8"/></svg><div class="v">80+</div></div>
               <div class="l"><span class="ic icon-smartphone"></span>Mobile App Speed</div></div>
           </div>
+          <p class="note">Scores measured on our demo store. Actual speed may vary with internet connection, browser extensions, module customizations, and other technical factors.</p>
         </div>
       </div>
     </div>
