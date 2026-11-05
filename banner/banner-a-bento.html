@@ -1,0 +1,78 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Scita v20 Banner A - Bento Teal</title>
+<link rel="stylesheet" href="../folds/scita.css">
+<style>
+  body { background: #fff; }
+  .bn { width: 538px; height: 269px; position: relative; overflow: hidden; color: #fff; font-family: "Poppins", sans-serif;
+    background: radial-gradient(260px 200px at 18% 30%, rgba(1,126,132,.85), transparent 70%),
+                radial-gradient(220px 180px at 70% 110%, rgba(129,197,76,.22), transparent 70%),
+                linear-gradient(135deg, #0F5C61 0%, #0B4548 100%); }
+  .bn::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px); background-size: 12px 12px; }
+  /* v20 corner burst */
+  .burst { position: absolute; left: -14px; top: -18px; width: 86px; height: 86px; z-index: 3; }
+  .burst svg { width: 100%; height: 100%; }
+  .burst b { position: absolute; left: 22px; top: 31px; font-size: 19px; font-weight: 800; color: #0B4548; letter-spacing: -.5px; }
+  .left { position: absolute; left: 24px; top: 82px; width: 236px; z-index: 2; }
+  .logo b { display: block; font-size: 22px; font-weight: 800; letter-spacing: 4px; line-height: 1; }
+  .logo span { display: inline-block; font-size: 8px; font-weight: 600; color: #CFEDEA; margin-top: 3px; border-top: 1px solid rgba(255,255,255,.5); padding-top: 2px; }
+  .hl { font-size: 23px; font-weight: 800; line-height: 1.05; margin-top: 14px; letter-spacing: -.4px; }
+  .hl em { font-style: normal; background: linear-gradient(92deg, #A6E07A, #81C54C 50%, #4FC3B9); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { font-size: 10.5px; line-height: 1.45; color: #D7ECEA; margin-top: 8px; }
+  .sub b { color: #fff; font-weight: 600; }
+  /* bento */
+  .grid { position: absolute; right: 12px; top: 12px; width: 262px; height: 245px; display: grid; gap: 6px; z-index: 2;
+    grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "room room ai" "room room drop" "ship pwa snip"; }
+  .t { border-radius: 12px; overflow: hidden; position: relative; }
+  .room { grid-area: room; background: #EDE6DA; }
+  .room img { width: 100%; height: 100%; object-fit: cover; object-position: 48% 55%; }
+  .room .hs { width: 18px; height: 18px; margin: -9px 0 0 -9px; box-shadow: 0 0 0 5px rgba(1,126,132,.35), 0 0 0 11px rgba(1,126,132,.15); }
+  .room .hs::after { width: 8px; height: 8px; }
+  .room .lab { position: absolute; left: 7px; bottom: 7px; display: flex; align-items: center; gap: 5px; background: rgba(6,40,43,.82); padding: 4px 8px 4px 6px; border-radius: 8px; font-size: 9px; font-weight: 700; }
+  .room .lab .ic { color: var(--green); font-size: 12px; }
+  .room .qr { position: absolute; right: 7px; top: 7px; background: #fff; border-radius: 6px; padding: 3px; box-shadow: 0 3px 8px rgba(0,0,0,.2); }
+  .room .qr img { width: 26px; height: 26px; display: block; }
+  .ai { grid-area: ai; background: #fff; color: #1F2627; padding: 7px; display: flex; flex-direction: column; gap: 4px; }
+  .ai .h { font-size: 7.5px; font-weight: 700; color: var(--teal); display: flex; gap: 3px; align-items: center; }
+  .bub { font-size: 6.6px; line-height: 1.3; padding: 3px 5px; border-radius: 6px; }
+  .bub.u { align-self: flex-end; background: var(--teal); color: #fff; border-bottom-right-radius: 2px; }
+  .bub.a { align-self: flex-start; background: #EEF5F5; border-bottom-left-radius: 2px; }
+  .drop { grid-area: drop; background: linear-gradient(150deg, #81C54C, #5FA832); padding: 8px; display: flex; flex-direction: column; justify-content: space-between; }
+  .drop .n { font-size: 21px; font-weight: 800; line-height: 1; letter-spacing: -.5px; }
+  .drop .l { font-size: 8px; font-weight: 600; line-height: 1.2; }
+  .drop .ic { position: absolute; right: 8px; bottom: 9px; font-size: 14px; opacity: .9; }
+  .ship { grid-area: ship; background: #fff; color: #1F2627; padding: 8px; display: flex; flex-direction: column; justify-content: space-between; }
+  .ship .l { font-size: 8px; font-weight: 700; line-height: 1.2; } .ship .l .ic { color: var(--green-btn); font-size: 11px; }
+  .ship .bar { height: 5px; border-radius: 4px; background: #E1ECDA; position: relative; }
+  .ship .bar i { position: absolute; inset: 0 22% 0 0; border-radius: 4px; background: linear-gradient(90deg, var(--teal), var(--green)); }
+  .ship .s { font-size: 6.5px; color: #6B7576; }
+  .pwa { grid-area: pwa; background: rgba(255,255,255,.1); box-shadow: inset 0 0 0 1px rgba(255,255,255,.22); display: grid; place-items: center; text-align: center; }
+  .pwa .ring { width: 40px; height: 40px; position: relative; }
+  .pwa svg { width: 40px; height: 40px; transform: rotate(-90deg); }
+  .pwa .v { position: absolute; inset: 0; display: grid; place-items: center; font-size: 11px; font-weight: 800; color: var(--green); }
+  .pwa .l { font-size: 7.5px; font-weight: 600; margin-top: 2px; }
+  .snip { grid-area: snip; background: #fff; color: #1F2627; padding: 8px; display: flex; flex-direction: column; justify-content: center; }
+  .snip .n { font-size: 26px; font-weight: 800; line-height: .95; background: linear-gradient(180deg, var(--teal), #0B4548); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .snip .l { font-size: 7.5px; font-weight: 600; line-height: 1.2; margin-top: 2px; }
+</style></head>
+<body>
+<div class="bn" id="banner">
+  <div class="burst"><svg viewBox="0 0 100 100"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A6E07A"/><stop offset="1" stop-color="#5FA832"/></linearGradient></defs>
+    <polygon fill="url(#g)" points="50,2 58,13 71,8 74,22 88,24 85,38 97,46 88,56 95,69 82,74 82,88 68,87 61,99 50,91 39,99 32,87 18,88 18,74 5,69 12,56 3,46 15,38 12,24 26,22 29,8 42,13"/></svg><b>v20</b></div>
+  <div class="left">
+    <div class="logo"><b>SCITA</b><span>Simply Versatile</span></div>
+    <div class="hl"><em>Faster, Smarter</em><br>&amp; More Immersive</div>
+    <div class="sub"><b>3D &amp; AR</b> product view, <b>AI</b> shopping assistant and <b>price drop alerts</b>.</div>
+  </div>
+  <div class="grid">
+    <div class="t room"><img src="../assets/renders/room_wide.png" alt=""><span class="hs active" style="left:50%;top:58%"></span>
+      <span class="qr"><img src="../assets/qr/furniture.svg" alt=""></span>
+      <span class="lab"><span class="ic icon-rotate-3d"></span>3D &amp; AR View</span></div>
+    <div class="t ai"><div class="h"><span class="ic icon-sparkles"></span>AI Assistant</div><div class="bub u">Sofa under $800?</div><div class="bub a">Here are 3 picks ✨</div></div>
+    <div class="t drop"><span class="ic icon-bell-ring"></span><div class="n">-15%</div><div class="l">Price Drop<br>Alerts</div></div>
+    <div class="t ship"><div class="l"><span class="ic icon-truck"></span> Free Shipping</div><div class="bar"><i></i></div><div class="s">Add $14 more</div></div>
+    <div class="t pwa"><div><div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="12"/><circle cx="60" cy="60" r="48" fill="none" stroke="#81C54C" stroke-width="12" stroke-linecap="round" stroke-dasharray="301.6" stroke-dashoffset="27"/></svg><div class="v">90+</div></div><div class="l">PWA Speed</div></div></div>
+    <div class="t snip"><div class="n">84</div><div class="l">Pre-built<br>Snippets</div></div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Scita v20 Banner B - Immersive Light</title>
+<link rel="stylesheet" href="../folds/scita.css">
+<style>
+  body { background: #fff; }
+  .bn { width: 538px; height: 269px; position: relative; overflow: hidden; font-family: "Poppins", sans-serif; color: #1F2627;
+    background: radial-gradient(240px 200px at 72% 58%, #FFFFFF 0%, rgba(255,255,255,0) 70%),
+                radial-gradient(300px 220px at 100% 0%, rgba(129,197,76,.22), transparent 70%),
+                linear-gradient(135deg, #F2FAFA 0%, #E6F4F3 60%, #D6EDEB 100%); }
+  .bn::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(1,126,132,.16) 1px, transparent 1px); background-size: 12px 12px;
+    -webkit-mask-image: linear-gradient(90deg, #000 0%, transparent 55%); mask-image: linear-gradient(90deg, #000 0%, transparent 55%); }
+  /* teal slab on the left */
+  .slab { position: absolute; left: 0; top: 0; bottom: 0; width: 232px; background: linear-gradient(160deg, #0F5C61, #0B4548); clip-path: polygon(0 0, 100% 0, 84% 100%, 0 100%); }
+  .slab::after { content: ""; position: absolute; inset: 0; background: radial-gradient(180px 140px at 10% 0%, rgba(1,126,132,.9), transparent 70%); }
+  .left { position: absolute; left: 22px; top: 22px; width: 190px; z-index: 3; color: #fff; }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo b { font-size: 18px; font-weight: 800; letter-spacing: 3.5px; line-height: 1; }
+  .ver { font-size: 11px; font-weight: 800; color: #0B4548; background: linear-gradient(92deg, #A6E07A, #81C54C); padding: 3px 8px; border-radius: 999px; box-shadow: 0 0 14px rgba(129,197,76,.55); }
+  .tag { font-size: 7.5px; font-weight: 600; color: #9FD3CF; margin-top: 3px; letter-spacing: .3px; }
+  .hl { font-size: 25px; font-weight: 800; line-height: 1.02; margin-top: 18px; letter-spacing: -.5px; }
+  .hl em { font-style: normal; color: var(--green); }
+  .sub { font-size: 10px; line-height: 1.45; color: #D7ECEA; margin-top: 8px; }
+  .cta { display: inline-flex; align-items: center; gap: 5px; margin-top: 12px; height: 24px; padding: 0 11px; border-radius: 7px; background: var(--green-btn); color: #fff; font-size: 9.5px; font-weight: 600; box-shadow: 0 4px 10px rgba(95,168,50,.35); }
+  /* stage */
+  .stage { position: absolute; left: 214px; top: 0; right: 0; bottom: 0; }
+  .ring { position: absolute; left: 50%; top: 174px; width: 210px; height: 48px; margin-left: -105px; border-radius: 50%; border: 2px dashed rgba(1,126,132,.55); }
+  .ring2 { position: absolute; left: 50%; top: 162px; width: 270px; height: 72px; margin-left: -135px; border-radius: 50%; border: 1px solid rgba(1,126,132,.18); }
+  .glow { position: absolute; left: 50%; top: 178px; width: 200px; height: 34px; margin-left: -100px; border-radius: 50%; background: radial-gradient(closest-side, rgba(1,126,132,.22), transparent); }
+  .sofa { position: absolute; left: 50%; top: 80px; width: 200px; margin-left: -100px; filter: drop-shadow(0 10px 14px rgba(15,92,97,.18)); }
+  .dim { position: absolute; left: 50%; top: 82px; width: 170px; margin-left: -85px; height: 1.5px; background: #017E84; }
+  .dim::before, .dim::after { content: ""; position: absolute; top: -4px; width: 1.5px; height: 9px; background: #017E84; }
+  .dim::before { left: 0; } .dim::after { right: 0; }
+  .dim span { position: absolute; left: 50%; top: -9px; transform: translateX(-50%); white-space: nowrap; background: #fff; color: #0B4548; font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 5px; box-shadow: 0 2px 6px rgba(15,92,97,.18); }
+  .hs { width: 18px; height: 18px; margin: -9px 0 0 -9px; box-shadow: 0 0 0 5px rgba(1,126,132,.25), 0 0 0 11px rgba(1,126,132,.1), 0 3px 8px rgba(0,0,0,.2); }
+  .hs::after { width: 8px; height: 8px; }
+  .chipf { position: absolute; z-index: 4; display: flex; align-items: center; gap: 6px; background: #fff; border-radius: 10px; padding: 6px 9px 6px 6px;
+    box-shadow: 0 2px 4px rgba(15,92,97,.06), 0 8px 18px rgba(15,92,97,.14); font-size: 8.5px; font-weight: 700; white-space: nowrap; }
+  .chipf .i { width: 20px; height: 20px; border-radius: 6px; display: grid; place-items: center; font-family: lucide; font-size: 11px; color: #fff; background: linear-gradient(145deg, #0E8F95, var(--teal)); }
+  .chipf .i.g { background: linear-gradient(145deg, #81C54C, #5FA832); }
+  .chipf small { display: block; font-size: 7px; font-weight: 500; color: #6B7576; margin-top: 1px; }
+  .chipf .big { font-size: 13px; font-weight: 800; color: var(--green-btn); line-height: 1; }
+</style></head>
+<body>
+<div class="bn" id="banner">
+  <div class="slab"></div>
+  <div class="left">
+    <div class="logo"><b>SCITA</b><span class="ver">v20</span></div>
+    <div class="tag">SIMPLY VERSATILE · ODOO 20 THEME</div>
+    <div class="hl">Shop in <em>3D</em>.<br>Decide with <em>AI</em>.</div>
+    <div class="sub">Immersive product discovery that turns browsers into buyers.</div>
+    <div class="cta"><span class="ic icon-rotate-3d"></span>Explore Scita 20</div>
+  </div>
+  <div class="stage">
+    <div class="ring2"></div><div class="glow"></div><div class="ring"></div>
+    <img class="sofa" src="sofa_t.png" alt="">
+    <div class="dim"><span>224 cm · True to Scale</span></div>
+    <span class="hs active" style="left:47%;top:138px"></span>
+    <div class="chipf" style="left:14px;top:18px"><span class="i icon-scan-qr-code"></span><div>Image Hotspot<small>with 3D &amp; AR</small></div></div>
+    <div class="chipf" style="right:12px;top:108px"><span class="i icon-camera"></span><div>AI Visual Search<small>Find by photo</small></div></div>
+    <div class="chipf" style="left:12px;top:212px"><span class="i g icon-bell-ring"></span><div><span class="big">-15%</span><small>Price Drop Alert</small></div></div>
+    <div class="chipf" style="right:14px;top:212px"><span class="i icon-gauge"></span><div><span class="big" style="color:var(--teal)">90+</span><small>PWA Speed</small></div></div>
+  </div>
+</div>
+</body></html>
