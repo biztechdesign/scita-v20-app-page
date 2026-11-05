@@ -34,8 +34,9 @@
   .browser2 img { width: 100%; display: block; }
   .ph { position: absolute; left: 252px; top: 92px; width: 82px; padding: 4px; border-radius: 15px; background: #111718; z-index: 4;
     box-shadow: 0 8px 16px rgba(6,40,43,.25), 0 18px 34px rgba(6,40,43,.22); }
-  .ph img { width: 100%; display: block; border-radius: 11px; }
-  .ph::before { content: ""; position: absolute; left: 50%; top: 7px; width: 22px; height: 6px; margin-left: -11px; border-radius: 4px; background: #111718; z-index: 2; }
+  .ph .scr { border-radius: 11px; overflow: hidden; background: #fff; padding-top: 11px; height: 140px; }
+  .ph .scr img { width: 100%; display: block; }
+  .ph::before { content: ""; position: absolute; left: 50%; top: 7px; width: 20px; height: 5px; margin-left: -11px; border-radius: 4px; background: #111718; z-index: 2; }
   .badge { position: absolute; left: 470px; top: 10px; width: 56px; height: 56px; border-radius: 50%; z-index: 5; display: grid; place-items: center; text-align: center;
     background: radial-gradient(circle at 35% 30%, #22A3A8, #0F5C61 70%); color: #fff; box-shadow: 0 0 0 4px rgba(255,255,255,.9), 0 8px 18px rgba(6,40,43,.3); }
   .badge b { display: block; font-size: 17px; font-weight: 800; line-height: 1; letter-spacing: -.4px; }
@@ -61,7 +62,7 @@
     </div>
   </div>
   <div class="browser2"><div class="bar"><i></i><i></i><i></i><span class="u"></span></div><img src="../assets/shots/furniture_desktop.png" alt=""></div>
-  <div class="ph"><img src="../assets/shots/furniture_mobile.png" alt=""></div>
+  <div class="ph"><div class="scr"><img src="../assets/shots/furniture_mobile.png" alt=""></div></div>
   <div class="badge"><div><b>v20</b><small>ODOO 20</small></div></div>
   <div class="stat"><span class="n">84</span><span class="l">Production-grade<br>snippets</span></div>
 </div>
