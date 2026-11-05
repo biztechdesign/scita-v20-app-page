@@ -1,0 +1,70 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Scita v20 Banner F - Demo Collage</title>
+<link rel="stylesheet" href="../folds/scita.css">
+<style>
+  body { background: #fff; }
+  .bn { width: 538px; height: 269px; position: relative; overflow: hidden; color: #fff; font-family: "Poppins", sans-serif;
+    background: radial-gradient(260px 220px at 20% 20%, rgba(1,126,132,.8), transparent 70%),
+                radial-gradient(260px 200px at 100% 100%, rgba(129,197,76,.18), transparent 70%),
+                linear-gradient(135deg, #0F5C61 0%, #0B4548 100%); }
+  /* angled collage of the 4 live demos */
+  .wall { position: absolute; left: 236px; top: -60px; width: 420px; height: 420px; transform: perspective(900px) rotateX(18deg) rotateY(-22deg) rotateZ(14deg); transform-origin: 0 0; }
+  .s { position: absolute; width: 168px; border-radius: 7px; overflow: hidden; background: #fff; box-shadow: 0 10px 24px rgba(0,0,0,.35); }
+  .s .bar { height: 9px; background: #F1F6F6; display: flex; gap: 2px; align-items: center; padding: 0 4px; } .s .bar i { width: 3px; height: 3px; border-radius: 50%; background: #CBD6D6; }
+  .s img { width: 100%; display: block; }
+  .s .nm { position: absolute; left: 6px; bottom: 6px; font-size: 7px; font-weight: 700; color: #fff; background: rgba(6,40,43,.85); padding: 2px 6px; border-radius: 5px; }
+  .fade { position: absolute; inset: 0; background: linear-gradient(90deg, #0E5458 0%, rgba(14,84,88,.92) 38%, rgba(14,84,88,0) 56%); z-index: 2; }
+  .fade2 { position: absolute; left: 0; right: 0; bottom: 0; height: 60px; background: linear-gradient(0deg, rgba(11,69,72,.95), transparent); z-index: 2; }
+  .left { position: absolute; left: 22px; top: 18px; width: 230px; z-index: 4; }
+  .logo { display: flex; align-items: center; gap: 7px; }
+  .logo b { font-size: 16px; font-weight: 800; letter-spacing: 3.5px; line-height: 1; }
+  .logo span { font-size: 7px; font-weight: 600; color: #9FD3CF; letter-spacing: .3px; border-left: 1px solid rgba(255,255,255,.3); padding-left: 7px; }
+  .hl { font-size: 24px; font-weight: 800; line-height: 1.04; margin-top: 12px; letter-spacing: -.5px; }
+  .hl em { font-style: normal; color: var(--green); }
+  .list { margin-top: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 5px 8px; }
+  .li { display: flex; align-items: center; gap: 5px; font-size: 8px; font-weight: 600; color: #E6F4F3; white-space: nowrap; }
+  .li i { width: 13px; height: 13px; flex: 0 0 13px; border-radius: 50%; background: var(--green); color: #0B4548; display: grid; place-items: center; font-family: lucide; font-style: normal; font-size: 8px; }
+  .ver { position: absolute; right: 16px; top: 14px; z-index: 5; width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; text-align: center; transform: rotate(-10deg);
+    background: linear-gradient(145deg, #A6E07A, #5FA832); color: #0B4548; box-shadow: 0 0 0 3px rgba(255,255,255,.18), 0 8px 18px rgba(0,0,0,.3); }
+  .ver b { display: block; font-size: 17px; font-weight: 800; line-height: 1; } .ver small { display: block; font-size: 5.8px; font-weight: 700; letter-spacing: .3px; }
+  .strip { position: absolute; left: 0; width: max-content; bottom: 0; height: 40px; z-index: 5; display: flex; align-items: center; gap: 10px; padding: 0 22px; border-radius: 0 12px 0 0;
+    background: rgba(6,40,43,.72); border-top: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(4px); }
+  .strip .k { display: flex; align-items: baseline; gap: 4px; }
+  .strip .k b { font-size: 17px; font-weight: 800; color: var(--green); line-height: 1; }
+  .strip .k span { font-size: 7.5px; font-weight: 600; color: #CFE7E5; line-height: 1.15; white-space: nowrap; }
+  .strip .sep { width: 1px; height: 20px; background: rgba(255,255,255,.18); }
+  .strip .demos { display: flex; gap: 5px; }
+  .strip .demos span { display: inline-flex; align-items: center; gap: 4px; font-size: 7.5px; font-weight: 600; padding: 3px 7px; border-radius: 999px; background: rgba(255,255,255,.1); box-shadow: inset 0 0 0 1px rgba(255,255,255,.18); }
+  .strip .demos .ic { color: var(--green); font-size: 9px; }
+</style></head>
+<body>
+<div class="bn" id="banner">
+  <div class="wall">
+    <div class="s" style="left:0;top:20px"><div class="bar"><i></i><i></i><i></i></div><img src="../assets/shots/grocery_desktop.png" alt=""><span class="nm">Grocery</span></div>
+    <div class="s" style="left:182px;top:0"><div class="bar"><i></i><i></i><i></i></div><img src="../assets/shots/furniture_desktop.png" alt=""><span class="nm">Furniture</span></div>
+    <div class="s" style="left:20px;top:146px"><div class="bar"><i></i><i></i><i></i></div><img src="../assets/shots/electronics_desktop.png" alt=""><span class="nm">Electronics</span></div>
+    <div class="s" style="left:202px;top:126px"><div class="bar"><i></i><i></i><i></i></div><img src="../assets/shots/webtoprint_desktop.png" alt=""><span class="nm">Web to Print</span></div>
+    <div class="s" style="left:40px;top:272px"><div class="bar"><i></i><i></i><i></i></div><img src="../assets/shots/tiles/tile_collection.png" alt=""></div>
+    <div class="s" style="left:222px;top:252px"><div class="bar"><i></i><i></i><i></i></div><img src="../assets/shots/tiles/tile_grocery.png" alt=""></div>
+  </div>
+  <div class="fade"></div><div class="fade2"></div>
+  <div class="ver"><div><b>v20</b><small>NEW RELEASE</small></div></div>
+  <div class="left">
+    <div class="logo"><b>SCITA</b><span>Odoo 20 eCommerce Theme</span></div>
+    <div class="hl">Smarter Stores.<br><em>Immersive</em> Shopping.</div>
+    <div class="list">
+      <div class="li"><i class="icon-check"></i>3D &amp; AR Product View</div>
+      <div class="li"><i class="icon-check"></i>Image Hotspots</div>
+      <div class="li"><i class="icon-check"></i>AI Shopping Assistant</div>
+      <div class="li"><i class="icon-check"></i>AI Visual Search</div>
+      <div class="li"><i class="icon-check"></i>Price Drop Alerts</div>
+      <div class="li"><i class="icon-check"></i>Free-Shipping Bar</div>
+    </div>
+  </div>
+  <div class="strip">
+    <div class="k"><b>84</b><span>Ready-made<br>snippets</span></div><div class="sep"></div>
+    <div class="k"><b>90+</b><span>PageSpeed<br>(desktop)</span></div><div class="sep"></div>
+    <div class="k"><b>4</b><span>Live demo<br>stores</span></div><div class="sep"></div><div class="k"><b>6</b><span>New v20<br>features</span></div>
+  </div>
+</div>
+</body></html>

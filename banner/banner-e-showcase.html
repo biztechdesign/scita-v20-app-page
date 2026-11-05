@@ -1,0 +1,68 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Scita v20 Banner E - Device Showcase</title>
+<link rel="stylesheet" href="../folds/scita.css">
+<style>
+  body { background: #fff; }
+  .bn { width: 538px; height: 269px; position: relative; overflow: hidden; font-family: "Poppins", sans-serif; color: #1F2627;
+    background: radial-gradient(300px 260px at 82% 40%, rgba(1,126,132,.16), transparent 70%),
+                radial-gradient(220px 200px at 0% 100%, rgba(129,197,76,.16), transparent 70%),
+                linear-gradient(135deg, #F7FCFC 0%, #E6F4F3 100%); }
+  .bn::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(1,126,132,.12) 1px, transparent 1px); background-size: 12px 12px;
+    -webkit-mask-image: linear-gradient(90deg, #000, transparent 60%); mask-image: linear-gradient(90deg, #000, transparent 60%); }
+  .left { position: absolute; left: 22px; top: 20px; width: 232px; z-index: 3; }
+  .logo { display: flex; align-items: center; gap: 6px; }
+  .mark { width: 22px; height: 22px; border-radius: 6px; background: linear-gradient(145deg, #0E8F95, #0F5C61); color: #fff; font-size: 14px; font-weight: 800; display: grid; place-items: center; }
+  .logo b { font-size: 8px; font-weight: 700; letter-spacing: 1.6px; color: var(--teal); }
+  .byl { font-size: 7.5px; color: #6B7576; border-left: 1px solid rgba(1,126,132,.3); padding-left: 6px; } .byl em { font-style: normal; font-weight: 700; color: #0B4548; }
+  .title { font-size: 40px; font-weight: 800; line-height: .95; letter-spacing: -1px; margin-top: 10px; color: #0B4548; }
+  .title span { display: block; color: var(--teal); }
+  .sub { font-size: 10px; font-weight: 500; margin-top: 7px; color: #3E4849; white-space: nowrap; }
+  .sub b { color: var(--green-btn); font-weight: 700; }
+  .pills { display: grid; grid-template-columns: repeat(2, auto); gap: 5px 5px; margin-top: 12px; justify-content: start; }
+  .pill { display: inline-flex; align-items: center; gap: 4px; height: 20px; padding: 0 8px 0 6px; border-radius: 999px; background: #fff; font-size: 7.5px; font-weight: 600; color: #1F2627;
+    box-shadow: 0 1px 2px rgba(15,92,97,.06), 0 3px 8px rgba(15,92,97,.08); border: 1px solid rgba(1,126,132,.12); white-space: nowrap; }
+  .pill .ic { font-size: 10.5px; color: var(--teal); }
+  .pill.g .ic { color: var(--green-btn); }
+  .by { position: absolute; left: 22px; bottom: 14px; font-size: 7.5px; color: #6B7576; z-index: 3; }
+  .by b { color: #0B4548; font-weight: 700; }
+  /* devices */
+  .browser2 { position: absolute; left: 286px; top: 40px; width: 290px; border-radius: 10px; overflow: hidden; background: #fff;
+    box-shadow: 0 6px 14px rgba(6,40,43,.12), 0 20px 40px rgba(6,40,43,.16); z-index: 2; }
+  .browser2 .bar { height: 16px; display: flex; align-items: center; gap: 3px; padding: 0 7px; background: #F1F6F6; border-bottom: 1px solid #E3ECEC; }
+  .browser2 .bar i { width: 5px; height: 5px; border-radius: 50%; background: #D0DADA; }
+  .browser2 .bar .u { margin-left: 8px; height: 9px; width: 120px; border-radius: 4px; background: #fff; border: 1px solid #E3ECEC; font-size: 5px; color: #8A9696; display: flex; align-items: center; padding-left: 4px; }
+  .browser2 img { width: 100%; display: block; }
+  .ph { position: absolute; left: 252px; top: 92px; width: 82px; padding: 4px; border-radius: 15px; background: #111718; z-index: 4;
+    box-shadow: 0 8px 16px rgba(6,40,43,.25), 0 18px 34px rgba(6,40,43,.22); }
+  .ph img { width: 100%; display: block; border-radius: 11px; }
+  .ph::before { content: ""; position: absolute; left: 50%; top: 7px; width: 22px; height: 6px; margin-left: -11px; border-radius: 4px; background: #111718; z-index: 2; }
+  .badge { position: absolute; left: 470px; top: 10px; width: 56px; height: 56px; border-radius: 50%; z-index: 5; display: grid; place-items: center; text-align: center;
+    background: radial-gradient(circle at 35% 30%, #22A3A8, #0F5C61 70%); color: #fff; box-shadow: 0 0 0 4px rgba(255,255,255,.9), 0 8px 18px rgba(6,40,43,.3); }
+  .badge b { display: block; font-size: 17px; font-weight: 800; line-height: 1; letter-spacing: -.4px; }
+  .badge small { display: block; font-size: 6px; font-weight: 600; color: #C9F09F; margin-top: 1px; letter-spacing: .3px; }
+  .stat { position: absolute; right: 10px; bottom: 14px; z-index: 5; display: flex; align-items: center; gap: 6px; background: #fff; border-radius: 9px; padding: 5px 9px 5px 6px;
+    box-shadow: 0 2px 4px rgba(15,92,97,.06), 0 8px 18px rgba(15,92,97,.16); }
+  .stat .n { font-size: 17px; font-weight: 800; color: var(--teal); line-height: 1; }
+  .stat .l { font-size: 7px; font-weight: 600; line-height: 1.15; color: #3E4849; }
+</style></head>
+<body>
+<div class="bn" id="banner">
+  <div class="left">
+    <div class="logo"><b>SIMPLY VERSATILE</b><span class="byl">by <em>AppJetty</em></span></div>
+    <div class="title">SCITA<span>Theme</span></div>
+    <div class="sub">The Immersive <b>Odoo 20</b> eCommerce Theme</div>
+    <div class="pills">
+      <span class="pill"><span class="ic icon-rotate-3d"></span>3D &amp; AR View</span>
+      <span class="pill"><span class="ic icon-bot"></span>AI Assistant</span>
+      <span class="pill"><span class="ic icon-camera"></span>AI Visual Search</span>
+      <span class="pill g"><span class="ic icon-bell-ring"></span>Price Drop Alerts</span>
+      <span class="pill g"><span class="ic icon-truck"></span>Free-Shipping Bar</span>
+      <span class="pill"><span class="ic icon-gauge"></span>PWA · 90+ Speed</span>
+    </div>
+  </div>
+  <div class="browser2"><div class="bar"><i></i><i></i><i></i><span class="u"></span></div><img src="../assets/shots/furniture_desktop.png" alt=""></div>
+  <div class="ph"><img src="../assets/shots/furniture_mobile.png" alt=""></div>
+  <div class="badge"><div><b>v20</b><small>ODOO 20</small></div></div>
+  <div class="stat"><span class="n">84</span><span class="l">Production-grade<br>snippets</span></div>
+</div>
+</body></html>
