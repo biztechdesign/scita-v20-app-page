@@ -34,11 +34,18 @@
   .browser2 .bar i { width: 5px; height: 5px; border-radius: 50%; background: #D0DADA; }
   .browser2 .bar .u { margin-left: 8px; height: 9px; width: 120px; border-radius: 4px; background: #fff; border: 1px solid #E3ECEC; font-size: 5px; color: #8A9696; display: flex; align-items: center; padding-left: 4px; }
   .browser2 img { width: 100%; display: block; }
-  .ph { position: absolute; left: 252px; top: 92px; width: 82px; padding: 4px; border-radius: 15px; background: #111718; z-index: 4;
-    box-shadow: 0 8px 16px rgba(6,40,43,.25), 0 18px 34px rgba(6,40,43,.22); }
-  .ph .scr { border-radius: 11px; overflow: hidden; background: #fff; padding-top: 11px; height: 124px; }
+  /* iPhone 16 mockup (393x852pt screen, 9:19.5) */
+  .ph { position: absolute; left: 250px; top: 74px; width: 86px; padding: 3.5px; border-radius: 15px; z-index: 4;
+    background: linear-gradient(145deg, #3A3F44, #15191B 40%, #2B3034); box-shadow: 0 0 0 .6px #5A6268 inset, 0 8px 16px rgba(6,40,43,.25), 0 18px 34px rgba(6,40,43,.22); }
+  .ph .scr { position: relative; border-radius: 12px; overflow: hidden; background: #fff; aspect-ratio: 393 / 852; }
+  .ph .sb { height: 10px; display: flex; align-items: center; justify-content: space-between; padding: 0 7px 0 9px; font-size: 4.6px; font-weight: 700; color: #111; }
+  .ph .sb .r { display: flex; gap: 2px; align-items: center; }
+  .ph .sb .sig { display: flex; gap: .6px; align-items: flex-end; } .ph .sb .sig i { width: 1px; background: #111; border-radius: .3px; }
+  .ph .sb .bat { width: 7px; height: 3.4px; border: .6px solid #111; border-radius: 1px; position: relative; } .ph .sb .bat::after { content: ""; position: absolute; inset: .5px 1.2px .5px .5px; background: #111; border-radius: .4px; }
+  .ph .di { position: absolute; left: 50%; top: 3px; width: 22px; height: 6.5px; margin-left: -11px; border-radius: 4px; background: #050607; z-index: 3; }
   .ph .scr img { width: 100%; display: block; }
-  .ph::before { content: ""; position: absolute; left: 50%; top: 7px; width: 20px; height: 5px; margin-left: -11px; border-radius: 4px; background: #111718; z-index: 2; }
+  .ph .btn-l { position: absolute; left: -1.2px; width: 1.4px; border-radius: 1px; background: #2A2F33; }
+  .ph .btn-r { position: absolute; right: -1.2px; width: 1.4px; border-radius: 1px; background: #2A2F33; }
   .badge { position: absolute; left: 470px; top: 10px; width: 56px; height: 56px; border-radius: 50%; z-index: 5; display: grid; place-items: center; text-align: center;
     background: radial-gradient(circle at 35% 30%, #22A3A8, #0F5C61 70%); color: #fff; box-shadow: 0 0 0 4px rgba(255,255,255,.9), 0 8px 18px rgba(6,40,43,.3); }
   .badge b { display: block; font-size: 19px; font-weight: 800; line-height: 1; letter-spacing: -.4px; }
@@ -63,7 +70,7 @@
     </div>
   </div>
   <div class="browser2"><div class="bar"><i></i><i></i><i></i><span class="u"></span></div><img src="../assets/shots/furniture20_desktop.png" alt=""></div>
-  <div class="ph"><div class="scr"><img src="../assets/shots/pwa_iphone16.png" alt=""></div></div>
+  <div class="ph"><span class="btn-l" style="top:30px;height:8px"></span><span class="btn-l" style="top:42px;height:12px"></span><span class="btn-l" style="top:57px;height:12px"></span><span class="btn-r" style="top:46px;height:18px"></span><div class="scr"><div class="di"></div><div class="sb"><span>9:41</span><span class="r"><span class="sig"><i style="height:1.4px"></i><i style="height:2.1px"></i><i style="height:2.8px"></i><i style="height:3.4px"></i></span><span class="bat"></span></span></div><img src="../assets/shots/pwa_iphone16_clean.png" alt=""></div></div>
   <div class="badge"><div><b>v20</b></div></div>
   <div class="stat"><span class="n">84</span><span class="l">Production-grade<br>snippets</span></div>
 </div>
